@@ -3,180 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Relanzamiento - A.D. Alcotán Canarias</title>
+    <title>A.D. Alcotán Canarias - Gestión Profesional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .tab-content { display: none; }
         .tab-content.active { display: block; }
-        .nav-link.active { border-bottom: 2px solid #fbbf24; color: #fbbf24; }
+        .nav-link.active { border-bottom: 3px solid #fbbf24; color: #fbbf24; background: rgba(251, 191, 36, 0.1); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
 
-    <header class="bg-black p-6 border-b border-yellow-500">
+    <header class="bg-black p-6 border-b border-yellow-500 shadow-2xl">
         <div class="container mx-auto flex justify-between items-center">
             <div>
-                <h1 class="text-3xl font-bold text-yellow-500">A.D. ALCOTÁN CANARIAS</h1>
-                <p class="text-sm text-gray-400">Proyecto Ejecutivo Temporada 2026-2027</p>
+                <h1 class="text-3xl font-black text-yellow-500 tracking-tighter italic">A.D. ALCOTÁN CANARIAS</h1>
+                <p class="text-xs uppercase tracking-widest text-gray-400 font-bold">Temporada 2026-2027 | Relanzamiento</p>
             </div>
-            <div class="text-right">
-                <span class="bg-green-600 text-xs font-bold px-3 py-1 rounded-full uppercase">Estado: En Relanzamiento</span>
+            <div class="hidden md:block">
+                <span class="border border-green-500 text-green-500 text-xs font-bold px-4 py-2 rounded-full">PROYECTO AUTOSOSTENIBLE</span>
             </div>
         </div>
     </header>
 
-    <nav class="bg-gray-800 sticky top-0 z-50">
+    <nav class="bg-gray-800 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex overflow-x-auto">
-            <button onclick="showTab('resumen')" class="nav-link px-6 py-4 font-semibold whitespace-nowrap active">Resumen</button>
-            <button onclick="showTab('deportivo')" class="nav-link px-6 py-4 font-semibold whitespace-nowrap">Proyecto Deportivo</button>
-            <button onclick="showTab('economia')" class="nav-link px-6 py-4 font-semibold whitespace-nowrap">Viabilidad Económica</button>
-            <button onclick="showTab('calendario')" class="nav-link px-6 py-4 font-semibold whitespace-nowrap">Plan de Actuación</button>
+            <button onclick="showTab('diagnostico')" class="nav-link px-6 py-4 font-bold active">DIAGNÓSTICO</button>
+            <button onclick="showTab('deportivo')" class="nav-link px-6 py-4 font-bold">DEPORTIVO</button>
+            <button onclick="showTab('finanzas')" class="nav-link px-6 py-4 font-bold">VIABILIDAD</button>
+            <button onclick="showTab('captacion')" class="nav-link px-6 py-4 font-bold">CAPTACIÓN</button>
         </div>
     </nav>
 
-    <main class="container mx-auto p-6">
+    <main class="container mx-auto p-4 md:p-8">
 
-        <section id="resumen" class="tab-content active space-y-6">
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-yellow-500 shadow-lg">
-                    <h3 class="text-gray-400 text-sm uppercase mb-2">Objetivo 26/27</h3>
-                    [span_0](start_span)<p class="text-xl font-bold">3 Equipos Federados[span_0](end_span)</p>
-                    [span_1](start_span)<p class="text-gray-400 text-xs mt-2">Prebenjamín, Benjamín, Alevín[span_1](end_span)</p>
+        <section id="diagnostico" class="tab-content active animate-fade-in">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
+                    <h2 class="text-xl font-bold mb-4 text-yellow-500">Situación Actual del Club</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 bg-red-900/20 p-3 rounded">
+                            <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                            [span_2](start_span)[span_3](start_span)<p class="text-sm">Actualmente sin equipos federados y con pérdida total de jugadores de base[span_2](end_span)[span_3](end_span).</p>
+                        </li>
+                        <li class="flex items-start gap-3 bg-gray-700/50 p-3 rounded">
+                            <i class="fas fa-map-marker-alt text-yellow-500 mt-1"></i>
+                            [span_4](start_span)<p class="text-sm">Instalaciones de Cuevas Torres y Barrio Atlántico infrautilizadas[span_4](end_span).</p>
+                        </li>
+                        <li class="flex items-start gap-3 bg-gray-700/50 p-3 rounded">
+                            <i class="fas fa-id-card text-yellow-500 mt-1"></i>
+                            [span_5](start_span)<p class="text-sm">Riesgo inminente de pérdida de identidad y continuidad histórica[span_5](end_span).</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-green-500 shadow-lg">
-                    <h3 class="text-gray-400 text-sm uppercase mb-2">Margen Anual Estimado</h3>
-                    [span_2](start_span)<p class="text-xl font-bold">3.500 € - 4.500 €[span_2](end_span)</p>
-                    [span_3](start_span)<p class="text-gray-400 text-xs mt-2">Proyecto 100% Autosostenible[span_3](end_span)</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg border-l-4 border-blue-500 shadow-lg">
-                    <h3 class="text-gray-400 text-sm uppercase mb-2">Instalaciones</h3>
-                    [span_4](start_span)<p class="text-xl font-bold">Base Operativa Dual[span_4](end_span)</p>
-                    [span_5](start_span)<p class="text-gray-400 text-xs mt-2">Cuevas Torres y Barrio Atlántico[span_5](end_span)</p>
+                <div class="bg-yellow-500 p-6 rounded-xl shadow-lg text-black">
+                    <h2 class="text-xl font-black mb-2 italic uppercase">El Objetivo Central</h2>
+                    [span_6](start_span)<p class="text-lg font-bold">Reconstruir la base con 3 equipos federados[span_6](end_span):</p>
+                    <div class="grid grid-cols-3 gap-2 mt-4 text-center">
+                        <div class="bg-black/10 p-3 rounded-lg border border-black/20 font-black">PREBENJAMÍN</div>
+                        <div class="bg-black/10 p-3 rounded-lg border border-black/20 font-black">BENJAMÍN</div>
+                        <div class="bg-black/10 p-3 rounded-lg border border-black/20 font-black">ALEVÍN</div>
+                    </div>
+                    [span_7](start_span)<p class="mt-6 text-sm font-semibold italic">"Una oportunidad real de reconstrucción bajo un modelo moderno"[span_7](end_span).</p>
                 </div>
             </div>
+        </section>
 
-            <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
-                [span_6](start_span)<h2 class="text-2xl font-bold mb-4">Diagnóstico de Situación[span_6](end_span)</h2>
-                <p class="text-gray-300 leading-relaxed italic border-l-4 border-red-500 pl-4 mb-4">
-                    [span_7](start_span)"El club no presentó equipos en la última temporada, perdiendo masa social y familias[span_7](end_span). [span_8](start_span)Existe un riesgo real de pérdida de identidad si no se actúa ahora[span_8](end_span)."
-                </p>
-                <div class="grid md:grid-cols-2 gap-4 mt-6">
-                    <div class="bg-gray-700 p-4 rounded">
-                        <h4 class="font-bold text-red-400 mb-2">Desafíos</h4>
-                        <ul class="text-sm list-disc pl-5 space-y-1">
-                            [span_9](start_span)<li>Sin equipos federados actualmente[span_9](end_span).</li>
-                            [span_10](start_span)<li>Ausencia de cuerpo técnico estable[span_10](end_span).</li>
-                            [span_11](start_span)<li>Instalaciones infrautilizadas[span_11](end_span).</li>
-                        </ul>
+        <section id="deportivo" class="tab-content">
+            <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-yellow-500"></i> Estructura Técnica Profesional
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-4 bg-gray-900 rounded-lg">
+                        <h3 class="font-bold text-yellow-500 mb-2">Metodología</h3>
+                        [span_8](start_span)<p class="text-sm text-gray-400">Plan formativo aplicado por etapas con capacitación mensual obligatoria para técnicos[span_8](end_span).</p>
                     </div>
-                    <div class="bg-gray-700 p-4 rounded">
-                        <h4 class="font-bold text-green-400 mb-2">Oportunidades</h4>
-                        <ul class="text-sm list-disc pl-5 space-y-1">
-                            [span_12](start_span)<li>Recuperar la base y estructura[span_12](end_span).</li>
-                            [span_13](start_span)<li>Modelo de gestión moderno y formativo[span_13](end_span).</li>
-                            [span_14](start_span)<li>Plan económico sin financiación externa[span_14](end_span).</li>
-                        </ul>
+                    <div class="p-4 bg-gray-900 rounded-lg">
+                        <h3 class="font-bold text-yellow-500 mb-2">Protección Menor</h3>
+                        [span_9](start_span)[span_10](start_span)<p class="text-sm text-gray-400">Delegado de Protección del Menor cumpliendo estrictamente con la normativa LOPIVI[span_9](end_span)[span_10](end_span).</p>
+                    </div>
+                    <div class="p-4 bg-gray-900 rounded-lg">
+                        <h3 class="font-bold text-yellow-500 mb-2">Organigrama</h3>
+                        [span_11](start_span)<p class="text-sm text-gray-400">Dirección Deportiva, Técnicos titulados, Delegados y Coordinación con colegios[span_11](end_span).</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="deportivo" class="tab-content space-y-6">
-            <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
-                [span_15](start_span)<h2 class="text-2xl font-bold mb-6 text-yellow-500">Metodología y Estructura[span_15](end_span)</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-white"><i class="fas fa-futbol mr-2"></i> Pilares Técnicos</h3>
-                        <ul class="space-y-4">
-                            <li class="bg-gray-700 p-3 rounded">
-                                [span_16](start_span)<strong>Metodología Propia:</strong> Aplicada de forma progresiva por etapas formativas[span_16](end_span).
-                            </li>
-                            <li class="bg-gray-700 p-3 rounded">
-                                [span_17](start_span)<strong>Capacitación:</strong> Plan de formación mensual para el cuerpo técnico[span_17](end_span).
-                            </li>
-                            <li class="bg-gray-700 p-3 rounded">
-                                [span_18](start_span)[span_19](start_span)<strong>Seguridad Infantil:</strong> Delegado de Protección del Menor (LOPIVI)[span_18](end_span)[span_19](end_span).
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-black p-6 rounded border border-gray-600">
-                        [span_20](start_span)<h3 class="text-lg font-semibold mb-4">Organigrama[span_20](end_span)</h3>
-                        <ul class="space-y-2 text-sm">
-                            <li class="flex items-center"><i class="fas fa-user-tie mr-2 text-yellow-500"></i> Dirección Deportiva</li>
-                            <li class="flex items-center ml-4 border-l-2 border-gray-600 pl-4"><i class="fas fa-user-shield mr-2"></i> Delegado Protección Menor</li>
-                            <li class="flex items-center ml-4 border-l-2 border-gray-600 pl-4"><i class="fas fa-clipboard-list mr-2"></i> Coordinación Familias/Colegios</li>
-                            <li class="flex items-center ml-8 border-l-2 border-gray-600 pl-4"><i class="fas fa-whistle mr-2"></i> Entrenadores por Categoría</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="economia" class="tab-content space-y-6">
-            <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
-                [span_21](start_span)<h2 class="text-2xl font-bold mb-6 text-green-500">Viabilidad Económica[span_21](end_span)</h2>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div style="height: 300px;">
-                        <canvas id="incomeChart"></canvas>
-                    </div>
+        <section id="finanzas" class="tab-content">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+                    <h2 class="text-xl font-bold mb-6 text-green-500">Resumen Ejecutivo de Gastos e Ingresos</h2>
                     <div class="space-y-4">
-                        <div class="flex justify-between border-b border-gray-700 pb-2">
-                            [span_22](start_span)<span>Ingresos Cuotas (30€/mes)[span_22](end_span)</span>
-                            <span class="font-bold text-green-400">13.500 €</span>
+                        <div class="flex justify-between border-b border-gray-700 pb-2 font-bold text-lg">
+                            <span class="text-red-400 italic">COSTE ANUAL BASE</span>
+                            [span_12](start_span)<span>11.650 €[span_12](end_span)</span>
                         </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-2">
-                            [span_23](start_span)<span>Beneficio Equipaciones (10-15%)[span_23](end_span)</span>
-                            <span class="font-bold text-green-400">~1.012 €</span>
+                        <div class="space-y-2 pt-4">
+                            <div class="flex justify-between text-sm">
+                                <span>Cuotas (30€ x 10 meses)</span>
+                                [span_13](start_span)<span class="text-green-400 font-bold">+ 13.500 €[span_13](end_span)</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Beneficio Equipaciones (10-15%)</span>
+                                [span_14](start_span)<span class="text-green-400 font-bold">+ 675-1.012 €[span_14](end_span)</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Campus (Navidad/Verano)</span>
+                                [span_15](start_span)<span class="text-green-400 font-bold">+ 1.460 €[span_15](end_span)</span>
+                            </div>
                         </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-2">
-                            [span_24](start_span)<span>Ingresos Campus (20% beneficio)[span_24](end_span)</span>
-                            <span class="font-bold text-green-400">1.460 €</span>
-                        </div>
-                        <div class="flex justify-between border-b border-gray-700 pb-2">
-                            [span_25](start_span)<span>Tecnificación para socios[span_25](end_span)</span>
-                            <span class="font-bold text-green-400">~800 €</span>
-                        </div>
-                        <div class="flex justify-between pt-4 text-xl">
-                            [span_26](start_span)<span class="text-red-400">Coste Anual Base[span_26](end_span)</span>
-                            <span class="font-bold">- 11.650 €</span>
+                        <div class="bg-green-600/20 p-4 rounded-lg mt-6 text-center border border-green-500">
+                            <p class="text-xs uppercase font-bold text-green-400">MARGEN ESTIMADO ANUAL</p>
+                            [span_16](start_span)<p class="text-3xl font-black text-green-500">3.500 € - 4.500 €[span_16](end_span)</p>
+                            [span_17](start_span)<p class="text-xs mt-1 italic">Proyecto 100% autosostenible[span_17](end_span).</p>
                         </div>
                     </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 flex flex-col justify-center">
+                    <canvas id="chartEconomia" height="250"></canvas>
                 </div>
             </div>
         </section>
 
-        <section id="calendario" class="tab-content space-y-6">
-            <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
-                [span_27](start_span)[span_28](start_span)<h2 class="text-2xl font-bold mb-6 text-blue-400">Plan de Actuación Abril - Junio[span_27](end_span)[span_28](end_span)</h2>
-                <div class="relative border-l-2 border-blue-500 ml-4 space-y-10">
-                    <div class="relative pl-8">
-                        <span class="absolute -left-2 top-0 bg-blue-500 w-4 h-4 rounded-full"></span>
-                        <h4 class="font-bold text-xl">ABRIL: Lanzamiento y Captación Digital</h4>
-                        <ul class="text-gray-400 text-sm mt-2 list-disc pl-5">
-                            [span_29](start_span)<li>Inicio de campañas de captación digital[span_29](end_span).</li>
-                            [span_30](start_span)<li>Primeros contactos y vínculo con colegios[span_30](end_span).</li>
-                            [span_31](start_span)<li>Difusión de contenidos audiovisuales institucionales[span_31](end_span).</li>
-                        </ul>
+        <section id="captacion" class="tab-content">
+            <div class="bg-gray-800 p-8 rounded-xl border border-gray-700">
+                <h2 class="text-2xl font-bold mb-8 text-blue-400 uppercase italic">Hoja de Ruta de Captación 2026</h2>
+                <div class="space-y-6 relative border-l-4 border-gray-700 ml-4">
+                    <div class="pl-8 relative">
+                        <div class="absolute -left-[10px] top-0 bg-yellow-500 w-4 h-4 rounded-full"></div>
+                        <h4 class="font-black text-lg">ENERO - SEPTIEMBRE</h4>
+                        [span_18](start_span)<p class="text-gray-400 text-sm">Plan de captación intensivo y progresivo[span_18](end_span).</p>
                     </div>
-                    <div class="relative pl-8">
-                        <span class="absolute -left-2 top-0 bg-blue-500 w-4 h-4 rounded-full"></span>
-                        <h4 class="font-bold text-xl">MAYO: Jornadas Abiertas y Tecnificación</h4>
-                        <ul class="text-gray-400 text-sm mt-2 list-disc pl-5">
-                            [span_32](start_span)<li>Apertura de jornadas de puertas abiertas[span_32](end_span).</li>
-                            [span_33](start_span)<li>Implementación de tecnificación como embudo de captación[span_33](end_span).</li>
-                        [span_34](start_span)<li>Entrevistas y selección de cuerpo técnico formativo[span_34](end_span).</li>
-                        </ul>
+                    <div class="pl-8 relative">
+                        <div class="absolute -left-[10px] top-0 bg-blue-500 w-4 h-4 rounded-full"></div>
+                        <h4 class="font-black text-lg">MARZO - MAYO</h4>
+                        [span_19](start_span)<p class="text-gray-400 text-sm">Jornadas abiertas desde marzo y tecnificación como embudo de captación[span_19](end_span).</p>
                     </div>
-                    <div class="relative pl-8">
-                        <span class="absolute -left-2 top-0 bg-blue-500 w-4 h-4 rounded-full"></span>
-                        <h4 class="font-bold text-xl">JUNIO: Torneo Alcotán y Consolidación</h4>
-                        <ul class="text-gray-400 text-sm mt-2 list-disc pl-5">
-                            [span_35](start_span)<li>Celebración del Torneo Alcotán Canarias (autofinanciado)[span_35](end_span).</li>
-                            [span_36](start_span)<li>Formalización de inscripciones para temporada 26-27[span_36](end_span).</li>
-                            [span_37](start_span)<li>Cierre de pretemporada estructurada[span_37](end_span).</li>
-                        </ul>
+                    <div class="pl-8 relative">
+                        <div class="absolute -left-[10px] top-0 bg-green-500 w-4 h-4 rounded-full"></div>
+                        <h4 class="font-black text-lg">JUNIO</h4>
+                        [span_20](start_span)<p class="text-gray-400 text-sm">Torneo Alcotán Canarias (autofinanciado) y campañas digitales institucionales[span_20](end_span).</p>
                     </div>
                 </div>
             </div>
@@ -184,40 +153,32 @@
 
     </main>
 
-    <footer class="bg-black text-center p-8 text-gray-500 text-sm border-t border-gray-800">
-        A.D. ALCOTÁN CANARIAS - Relanzamiento Estratégico © 2026<br>
-        Generado por Dirección Deportiva Senior
-    </footer>
-
     <script>
         function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
 
-        // Gráfico de Ingresos
-        const ctx = document.getElementById('incomeChart').getContext('2d');
+        const ctx = document.getElementById('chartEconomia').getContext('2d');
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
-                labels: ['Cuotas', 'Equipación', 'Campus', 'Tecnificación'],
+                labels: ['Gastos Base', 'Ingresos Estimados'],
                 datasets: [{
-                    data: [13500, 1012, 1460, 800],
-                    backgroundColor: ['#fbbf24', '#10b981', '#3b82f6', '#8b5cf6'],
-                    borderWidth: 0
+                    label: 'Presupuesto en €',
+                    data: [11650, 16150],
+                    backgroundColor: ['#ef4444', '#10b981'],
+                    borderRadius: 8
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: 'bottom', labels: { color: '#9ca3af' } }
-                }
+                plugins: { legend: { display: false } },
+                scales: { y: { grid: { color: '#374151' }, ticks: { color: '#9ca3af' } } }
             }
         });
     </script>
 </body>
 </html>
-
