@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.D. Alcotán Canarias | Formación y Valores</title>
+    <title>A.D. Alcotán Canarias | Formación, Valores y Tecnología</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background: #050505; color: #f3f4f6; }
+        body { font-family: 'Inter', sans-serif; background: #050505; color: #f3f4f6; overflow-x: hidden; }
         .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: slideUp 0.3s ease-out; }
@@ -21,19 +22,19 @@
 </head>
 <body>
 
-    <header class="relative h-56 md:h-80 flex flex-col items-center justify-center border-b border-yellow-500/10 overflow-hidden text-center px-4">
+    <header class="relative h-64 md:h-80 flex flex-col items-center justify-center border-b border-yellow-500/10 text-center px-4 overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526232762682-d2f5f6ca5042?q=80&w=2000')] bg-cover bg-center opacity-20"></div>
         <div class="relative z-10">
             <h1 class="text-4xl md:text-7xl font-black italic tracking-tighter text-yellow-500 uppercase">Alcotán Canarias</h1>
-            <p class="text-sm md:text-xl font-light tracking-[0.2em] text-gray-300 mt-2 uppercase">Más que fútbol, el futuro de tu hijo/a</p>
+            <p class="text-sm md:text-xl font-light tracking-[0.2em] text-gray-300 mt-2 uppercase">Formación integral en el corazón de Cuevas Torres</p>
         </div>
     </header>
 
-    <nav class="sticky top-0 z-50 glass-card border-b border-white/5 overflow-x-auto">
+    <nav class="sticky top-0 z-50 glass-card border-b border-white/5 overflow-x-auto no-scrollbar">
         <div class="flex justify-start md:justify-center min-w-max mx-auto px-4">
-            <button onclick="showTab('unirse')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest nav-active">Pre-Inscripción</button>
-            <button onclick="showTab('proyecto')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Nuestro Proyecto</button>
-            <button onclick="showTab('seguridad')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Protección y Ética</button>
+            <button onclick="showTab('unirse')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest nav-active">Reserva de Plaza</button>
+            <button onclick="showTab('proyecto')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Proyecto Deportivo</button>
+            <button onclick="showTab('seguridad')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Protección al Menor</button>
             <button onclick="showTab('tecnologia')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Gestión Digital</button>
         </div>
     </nav>
@@ -42,50 +43,50 @@
 
         <section id="unirse" class="tab-content active space-y-8">
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <h2 class="text-3xl md:text-5xl font-black italic uppercase text-white">Reserva de <span class="text-yellow-500">Plaza</span></h2>
-                <p class="text-gray-400 text-sm mt-4 italic">Sede Exclusiva: <span class="text-white font-bold">Complejo Deportivo Cuevas Torres</span></p>
+                <h2 class="text-3xl md:text-5xl font-black italic uppercase text-white">Únete al <span class="text-yellow-500 italic">Vuelo</span></h2>
+                <p class="text-gray-400 text-sm mt-4 italic">Sede Principal: <span class="text-white font-bold">Complejo Deportivo Cuevas Torres</span></p>
             </div>
             <div class="form-wrapper shadow-2xl border border-yellow-500/20">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj2RGIiWNmTQOXIKryUilu0IExKaCZhkqPxKye50BrM2mErQ/viewform?embedded=true">Cargando…</iframe>
             </div>
         </section>
 
-        <section id="proyecto" class="tab-content space-y-10">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+        <section id="proyecto" class="tab-content space-y-12">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div class="space-y-6">
-                    <h2 class="text-4xl font-black italic text-white uppercase tracking-tighter decoration-yellow-500 underline decoration-4">Metodología de Élite</h2>
-                    <p class="text-gray-400 leading-relaxed">En la A.D. Alcotán Canarias no solo enseñamos fútbol; aplicamos un modelo formativo basado en el desarrollo cognitivo y técnico por etapas.</p>
-                    <div class="grid grid-cols-1 gap-4">
+                    <h2 class="text-4xl font-black italic text-white uppercase tracking-tighter decoration-yellow-500 underline decoration-4">Metodología Formativa</h2>
+                    <p class="text-gray-400 leading-relaxed text-sm">Nuestro modelo deportivo se basa en la transparencia y la gestión profesional. Buscamos devolver al club su estructura federada en las categorías clave del fútbol base.</p>
+                    <div class="space-y-4">
                         <div class="glass-card p-5 rounded-2xl flex gap-4 items-center">
                             <i class="fas fa-graduation-cap text-yellow-500 text-2xl"></i>
                             <div>
-                                <h4 class="font-bold text-sm uppercase">Cuerpo Técnico Titulado</h4>
-                                <p class="text-[10px] text-gray-500">Entrenadores con plan de capacitación mensual obligatorio.</p>
+                                <h4 class="font-bold text-xs uppercase text-white">Capacitación Técnica</h4>
+                                <p class="text-[10px] text-gray-500">Entrenadores en formación continua con planes de capacitación mensual.</p>
                             </div>
                         </div>
                         <div class="glass-card p-5 rounded-2xl flex gap-4 items-center">
-                            <i class="fas fa-chart-line text-yellow-500 text-2xl"></i>
+                            <i class="fas fa-calendar-check text-yellow-500 text-2xl"></i>
                             <div>
-                                <h4 class="font-bold text-sm uppercase">Seguimiento Individual</h4>
-                                <p class="text-[10px] text-gray-500">Evaluación constante del progreso técnico y social del jugador.</p>
+                                <h4 class="font-bold text-xs uppercase text-white">Pretemporada Estructurada</h4>
+                                <p class="text-[10px] text-gray-500">Organización garantizada antes del inicio de la competición en septiembre.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
-                    <h3 class="text-yellow-500 font-black text-xs uppercase mb-6 italic">Categorías Formativas</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
-                            <span class="font-bold">PREBENJAMÍN</span>
-                            <span class="text-[10px] bg-yellow-500 text-black px-2 py-1 rounded font-black italic">DISPONIBLE</span>
+                <div class="glass-card p-8 rounded-[2rem] bg-gradient-to-b from-yellow-500/5 to-transparent">
+                    <h3 class="text-yellow-500 font-black text-xs uppercase mb-6 italic text-center">Categorías Disponibles</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="flex justify-between items-center bg-black/40 p-4 rounded-xl border border-white/5">
+                            <span class="font-bold text-sm">PREBENJAMÍN</span>
+                            <i class="fas fa-check-circle text-yellow-500"></i>
                         </div>
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
-                            <span class="font-bold">BENJAMÍN</span>
-                            <span class="text-[10px] bg-yellow-500 text-black px-2 py-1 rounded font-black italic">DISPONIBLE</span>
+                        <div class="flex justify-between items-center bg-black/40 p-4 rounded-xl border border-white/5">
+                            <span class="font-bold text-sm">BENJAMÍN</span>
+                            <i class="fas fa-check-circle text-yellow-500"></i>
                         </div>
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
-                            <span class="font-bold">ALEVÍN</span>
-                            <span class="text-[10px] bg-yellow-500 text-black px-2 py-1 rounded font-black italic">DISPONIBLE</span>
+                        <div class="flex justify-between items-center bg-black/40 p-4 rounded-xl border border-white/5">
+                            <span class="font-bold text-sm">ALEVÍN</span>
+                            <i class="fas fa-check-circle text-yellow-500"></i>
                         </div>
                     </div>
                 </div>
@@ -94,37 +95,44 @@
 
         <section id="seguridad" class="tab-content space-y-10">
             <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-4xl font-black italic text-white uppercase italic mb-6">Un entorno <span class="text-yellow-500">100% Seguro</span></h2>
+                <h2 class="text-4xl font-black italic text-white uppercase mb-6 italic underline decoration-yellow-500 decoration-4">Compromiso y <span class="text-yellow-500">Seguridad</span></h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500">
+                    <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500 text-left">
                         <i class="fas fa-user-shield text-3xl text-yellow-500 mb-4"></i>
                         <h4 class="font-black text-sm uppercase mb-2">Protocolo LOPIVI</h4>
-                        <p class="text-[11px] text-gray-400 leading-relaxed uppercase">Contamos con un Delegado de Protección del Menor dedicado exclusivamente a garantizar que cada entrenamiento sea un espacio de respeto, seguridad y bienestar.</p>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">Garantizamos un entorno seguro bajo la supervisión del Delegado de Protección del Menor. La integridad y el bienestar de cada jugador son nuestra máxima prioridad.</p>
                     </div>
-                    <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500">
-                        <i class="fas fa-expand-arrows-alt text-3xl text-yellow-500 mb-4"></i>
-                        <h4 class="font-black text-sm uppercase mb-2">Escalabilidad Sostenible</h4>
-                        <p class="text-[11px] text-gray-400 leading-relaxed uppercase">Nuestro proyecto crece con el jugador. Aseguramos la continuidad deportiva año tras año, garantizando una estructura sólida que no depende de factores externos.</p>
+                    <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500 text-left">
+                        <i class="fas fa-chart-area text-3xl text-yellow-500 mb-4"></i>
+                        <h4 class="font-black text-sm uppercase mb-2">Proyecto Escalable</h4>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">Trabajamos en un modelo de gestión sólido que permite el crecimiento progresivo de nuestros jugadores, asegurando estabilidad año tras año en su formación deportiva.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="tecnologia" class="tab-content space-y-8">
-            <div class="glass-card p-10 rounded-[3rem] bg-gradient-to-br from-yellow-500/10 to-transparent">
+            <div class="glass-card p-8 md:p-12 rounded-[2.5rem] border border-white/10">
                 <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <h2 class="text-4xl font-black italic text-white uppercase mb-4">Gestión <span class="text-yellow-500 italic">Next Gen</span></h2>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Somos el primer club del entorno que utiliza herramientas de <strong>Inteligencia Artificial</strong> y gestión digital avanzada para:</p>
-                        <ul class="space-y-4 text-xs font-bold uppercase tracking-wider text-gray-300">
-                            <li class="flex items-center gap-3"><i class="fas fa-robot text-yellow-500"></i> Optimización de cargas de entrenamiento vía IA.</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-mobile-alt text-yellow-500"></i> Comunicación directa y transparente con familias.</li>
-                            <li class="flex items-center gap-3"><i class="fas fa-database text-yellow-500"></i> Análisis de rendimiento técnico-táctico.</li>
-                        </ul>
+                    <div class="space-y-6">
+                        <h2 class="text-3xl md:text-5xl font-black italic text-white uppercase leading-tight">Gestión <span class="text-yellow-500 italic">Digital</span></h2>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Estamos concienciados con el uso de las nuevas tecnologías. El apoyo en herramientas digitales y de Inteligencia Artificial nos permite obtener ventajas organizativas y deportivas para ofrecer una gestión más profesional y transparente.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="fas fa-check text-yellow-500"></i> Planificación asistida por IA
+                            </div>
+                            <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="fas fa-check text-yellow-500"></i> Comunicación directa con familias
+                            </div>
+                            <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-gray-300">
+                                <i class="fas fa-check text-yellow-500"></i> Análisis organizacional eficiente
+                            </div>
+                        </div>
                     </div>
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-yellow-500/20 blur-[100px] rounded-full"></div>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000" class="relative rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" alt="Tecnología">
+                    <div class="relative opacity-40">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000" class="rounded-3xl grayscale" alt="Tecnología de gestión">
                     </div>
                 </div>
             </div>
@@ -132,13 +140,8 @@
 
     </main>
 
-    <footer class="p-20 text-center">
-        <p class="text-[10px] tracking-[0.5em] text-gray-600 font-bold uppercase italic mb-4">A.D. Alcotán Canarias • Cuevas Torres • 2026-2027</p>
-        <div class="flex justify-center gap-6 text-gray-500">
-            <i class="fab fa-instagram hover:text-yellow-500 cursor-pointer"></i>
-            <i class="fab fa-facebook hover:text-yellow-500 cursor-pointer"></i>
-            <i class="fab fa-whatsapp hover:text-yellow-500 cursor-pointer"></i>
-        </div>
+    <footer class="p-20 text-center opacity-40">
+        <p class="text-[9px] tracking-[0.6em] text-gray-500 font-bold uppercase italic">A.D. Alcotán Canarias • Cuevas Torres • 2026-2027</p>
     </footer>
 
     <script>
@@ -149,7 +152,7 @@
             
             const btns = document.querySelectorAll('.nav-btn');
             btns.forEach(btn => {
-                if(btn.innerText.toLowerCase().includes(tabId.substring(0,3).toLowerCase()) || (tabId === 'unirse' && btn.innerText.includes('PRE-INSCRIPCIÓN'))) {
+                if(btn.innerText.toLowerCase().includes(tabId.substring(0,3).toLowerCase()) || (tabId === 'unirse' && btn.innerText.includes('PLAZA'))) {
                     btn.classList.add('nav-active');
                 }
             });
@@ -157,4 +160,5 @@
         }
     </script>
 </body>
-</html>
+                        </html>
+                        
