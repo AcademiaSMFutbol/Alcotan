@@ -3,114 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.D. Alcotán Canarias | Gestión 26/27</title>
+    <title>A.D. Alcotán Canarias | Sistema de Gestión Integral</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #e5e7eb; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Inter', sans-serif; background: #050505; color: #f3f4f6; }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
         .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
-        .nav-active { color: #fbbf24; border-bottom: 3px solid #fbbf24; background: rgba(251, 191, 36, 0.05); }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        /* Ajuste responsivo para el formulario */
-        .form-container { position: relative; width: 100%; padding-top: 150%; /* Relación de aspecto para móviles */ }
-        @media (min-width: 768px) { .form-container { padding-top: 100%; } }
-        .form-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: invert(92%) hue-rotate(180deg) brightness(1.1); }
+        .tab-content.active { display: block; animation: slideUp 0.3s ease-out; }
+        .nav-active { border-bottom: 3px solid #fbbf24; color: #fbbf24; background: linear-gradient(to top, rgba(251, 191, 36, 0.1), transparent); }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Optimizador de Formulario */
+        .form-wrapper { position: relative; padding-top: 160%; overflow: hidden; border-radius: 1.5rem; background: #fff; }
+        @media (min-width: 768px) { .form-wrapper { padding-top: 100%; } }
+        .form-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; filter: invert(92%) hue-rotate(180deg) brightness(1.1); }
     </style>
 </head>
-<body class="antialiased">
+<body class="selection:bg-yellow-500/30">
 
-    <header class="relative h-40 md:h-56 flex items-center justify-center border-b border-yellow-500/20 overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=60')] bg-cover bg-center opacity-10"></div>
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-3xl md:text-6xl font-black italic tracking-tighter text-yellow-500 uppercase leading-none">ALCOTÁN CANARIAS</h1>
-            <p class="text-[10px] md:text-xs tracking-[0.2em] text-gray-400 mt-2 font-bold">RELANZAMIENTO TEMPORADA 2026-2027</p>
+    <header class="relative h-48 md:h-64 flex flex-col items-center justify-center border-b border-yellow-500/10 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1510566337590-2fc1f21d0faa?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div class="relative z-10 text-center">
+            <h1 class="text-4xl md:text-7xl font-black italic tracking-tighter text-yellow-500 uppercase">Alcotán Canarias</h1>
+            <div class="flex items-center justify-center gap-2 mt-2">
+                <span class="h-[1px] w-8 bg-yellow-500/50"></span>
+                <p class="text-[10px] md:text-xs tracking-[0.3em] text-gray-400 font-bold uppercase">Dirección Deportiva Senior</p>
+                <span class="h-[1px] w-8 bg-yellow-500/50"></span>
+            </div>
         </div>
     </header>
 
-    <nav class="sticky top-0 z-50 glass border-b border-white/10 overflow-x-auto no-scrollbar">
-        <div class="flex justify-start md:justify-center min-w-max mx-auto px-2">
-            <button onclick="showTab('unirse')" class="nav-btn px-4 py-4 text-[10px] md:text-xs font-black uppercase tracking-widest nav-active">Unirse</button>
-            <button onclick="showTab('info')" class="nav-btn px-4 py-4 text-[10px] md:text-xs font-black uppercase tracking-widest">Proyecto</button>
-            <button onclick="showTab('deporte')" class="nav-btn px-4 py-4 text-[10px] md:text-xs font-black uppercase tracking-widest">Deportivo</button>
-            <button onclick="showTab('finanzas')" class="nav-btn px-4 py-4 text-[10px] md:text-xs font-black uppercase tracking-widest">Viabilidad</button>
+    <nav class="sticky top-0 z-50 glass-card border-b border-white/5 overflow-x-auto">
+        <div class="flex justify-start md:justify-center min-w-max mx-auto px-4">
+            <button onclick="showTab('unirse')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest nav-active">Captación 26/27</button>
+            <button onclick="showTab('diagnostico')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Diagnóstico</button>
+            <button onclick="showTab('metodologia')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Metodología</button>
+            <button onclick="showTab('viabilidad')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Viabilidad</button>
         </div>
     </nav>
 
-    <main class="p-4 md:p-8 max-w-5xl mx-auto">
+    <main class="max-w-6xl mx-auto p-4 md:p-10 space-y-12">
 
-        <section id="unirse" class="tab-content active">
-            <div class="text-center mb-6">
-                <h2 class="text-2xl md:text-4xl font-black italic text-white uppercase italic">Pre-Inscripción</h2>
-                <p class="text-xs text-gray-500 mt-1">Plazas limitadas para Prebenjamín, Benjamín y Alevín</p>
+        <section id="unirse" class="tab-content active space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-black italic uppercase italic text-white underline decoration-yellow-500 decoration-4">Únete al Vuelo</h2>
+                <p class="text-gray-400 text-sm mt-4">Estamos registrando a los futuros jugadores de <strong>Prebenjamín, Benjamín y Alevín</strong>. No pierdas tu plaza en Cuevas Torres y Barrio Atlántico.</p>
             </div>
-            <div class="glass rounded-3xl overflow-hidden bg-white shadow-2xl">
-                <div class="form-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj2RGIiWNmTQOXIKryUilu0IExKaCZhkqPxKye50BrM2mErQ/viewform?embedded=true">Cargando…</iframe>
+            <div class="form-wrapper shadow-2xl border border-yellow-500/20">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj2RGIiWNmTQOXIKryUilu0IExKaCZhkqPxKye50BrM2mErQ/viewform?embedded=true">Cargando…</iframe>
+            </div>
+        </section>
+
+        <section id="diagnostico" class="tab-content">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl border-l-4 border-red-500 col-span-1">
+                    <h3 class="text-red-500 font-black text-xs uppercase mb-4 italic">Punto de Partida</h3>
+                    <ul class="text-xs space-y-3 text-gray-300 italic">
+                        <li>• Sin equipos federados actualmente.</li>
+                        <li>• Pérdida total de masa social.</li>
+                        <li>• Instalaciones infrautilizadas.</li>
+                        <li>• Riesgo de pérdida de identidad.</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-3xl col-span-2">
+                    <h3 class="text-yellow-500 font-black text-xs uppercase mb-6 italic">Objetivo Temporada 2026-2027</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+                            <span class="text-2xl font-black block">PB</span>
+                            <span class="text-[8px] text-gray-500 uppercase">Prebenjamín</span>
+                        </div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+                            <span class="text-2xl font-black block">B</span>
+                            <span class="text-[8px] text-gray-500 uppercase">Benjamín</span>
+                        </div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
+                            <span class="text-2xl font-black block">A</span>
+                            <span class="text-[8px] text-gray-500 uppercase">Alevín</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-6 text-center uppercase tracking-widest italic">Recuperando el fútbol base con estructura y orden profesional</p>
                 </div>
             </div>
         </section>
 
-        <section id="info" class="tab-content">
-            <div class="grid gap-4 md:grid-cols-2">
-                <div class="glass p-6 rounded-2xl border-l-4 border-yellow-500">
-                    <h3 class="text-yellow-500 font-black text-sm uppercase mb-2">Diagnóstico</h3>
-                    [span_3](start_span)<p class="text-xs leading-relaxed text-gray-300">Actualmente sin equipos federados[span_3](end_span). [span_4](start_span)El objetivo es recuperar la base en Cuevas Torres y Barrio Atlántico[span_4](end_span).</p>
-                </div>
-                <div class="glass p-6 rounded-2xl">
-                    <h3 class="text-white font-black text-sm uppercase mb-4 text-center">Categorías 26/27</h3>
-                    <div class="flex justify-between gap-2">
-                        <div class="flex-1 bg-white/5 p-3 rounded-xl text-center border border-white/5 font-bold text-xs uppercase">Prebenja</div>
-                        <div class="flex-1 bg-white/5 p-3 rounded-xl text-center border border-white/5 font-bold text-xs uppercase">Benjamín</div>
-                        <div class="flex-1 bg-white/5 p-3 rounded-xl text-center border border-white/5 font-bold text-xs uppercase">Alevín</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="deporte" class="tab-content">
-            <div class="space-y-4">
-                <div class="glass p-6 rounded-2xl flex items-center gap-4">
-                    <div class="bg-yellow-500/20 p-3 rounded-full text-yellow-500"><i class="fas fa-user-shield"></i></div>
-                    <div>
-                        <h4 class="font-bold text-sm uppercase">Seguridad (LOPIVI)</h4>
-                        [span_5](start_span)[span_6](start_span)<p class="text-[10px] text-gray-500 uppercase">Delegado de Protección del Menor activo[span_5](end_span)[span_6](end_span).</p>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl flex items-center gap-4">
-                    <div class="bg-yellow-500/20 p-3 rounded-full text-yellow-500"><i class="fas fa-graduation-cap"></i></div>
-                    <div>
-                        <h4 class="font-bold text-sm uppercase">Capacitación</h4>
-                        [span_7](start_span)[span_8](start_span)<p class="text-[10px] text-gray-400 uppercase">Plan de formación mensual para técnicos[span_7](end_span)[span_8](end_span).</p>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl flex items-center gap-4">
-                    <div class="bg-yellow-500/20 p-3 rounded-full text-yellow-500"><i class="fas fa-chart-line"></i></div>
-                    <div>
-                        <h4 class="font-bold text-sm uppercase">Captación</h4>
-                        [span_9](start_span)<p class="text-[10px] text-gray-400 uppercase">Tecnificación usada como embudo de captación[span_9](end_span).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="finanzas" class="tab-content">
-            <div class="grid md:grid-cols-2 gap-6">
+        <section id="metodologia" class="tab-content">
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-4">
-                    <div class="glass p-5 rounded-xl flex justify-between items-center border-l-4 border-red-500">
-                        <span class="text-[10px] font-bold uppercase text-gray-500">Gasto Base</span>
-                        [span_10](start_span)<span class="font-black text-white text-lg italic">11.650 €[span_10](end_span)</span>
+                    <h2 class="text-4xl font-black italic text-white uppercase tracking-tighter decoration-yellow-500 underline decoration-4">Modelo Pro</h2>
+                    <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:bg-white/5 transition-all">
+                        <i class="fas fa-shield-halved text-yellow-500 text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-black text-sm uppercase">Seguridad LOPIVI</h4>
+                            <p class="text-[10px] text-gray-500 mt-1 uppercase leading-relaxed">Delegado de Protección del Menor activo. Entorno 100% seguro para las familias.</p>
+                        </div>
                     </div>
-                    <div class="bg-yellow-500 p-6 rounded-2xl text-black text-center shadow-xl shadow-yellow-500/10">
-                        <p class="text-[9px] uppercase font-black tracking-widest opacity-60">Margen Estimado Anual</p>
-                        [span_11](start_span)<h4 class="text-4xl font-black italic tracking-tighter">4.500 €[span_11](end_span)</h4>
-                        [span_12](start_span)<p class="text-[10px] font-bold mt-1 uppercase italic">Proyecto Autosostenible[span_12](end_span)</p>
+                    <div class="glass-card p-6 rounded-2xl flex items-start gap-4 hover:bg-white/5 transition-all">
+                        <i class="fas fa-chalkboard-user text-yellow-500 text-2xl mt-1"></i>
+                        <div>
+                            <h4 class="font-black text-sm uppercase">Capacitación Mensual</h4>
+                            <p class="text-[10px] text-gray-400 mt-1 uppercase leading-relaxed">Plan formativo continuo para el cuerpo técnico titulado.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="glass p-4 rounded-2xl min-h-[250px] flex items-center justify-center">
+                <div class="glass-card p-8 rounded-3xl bg-[linear-gradient(45deg,rgba(0,0,0,0.8),rgba(251,191,36,0.05))]">
+                    <h3 class="font-black text-yellow-500 uppercase text-xs mb-6">Acciones de Captación</h3>
+                    <ul class="space-y-4 text-[10px] font-bold uppercase tracking-widest">
+                        <li class="flex items-center gap-3"><i class="fas fa-chevron-right text-yellow-500"></i> Jornadas Abiertas (Marzo)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-chevron-right text-yellow-500"></i> Tecnificación (Embudo de entrada)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-chevron-right text-yellow-500"></i> Alianzas con Colegios</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-chevron-right text-yellow-500"></i> Torneo Alcotán (Junio)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="viabilidad" class="tab-content">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <h2 class="text-4xl font-black italic text-white uppercase tracking-tighter">Finanzas</h2>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-red-500 flex justify-between items-center">
+                        <span class="text-xs font-bold text-gray-400 uppercase">Coste Operativo Base</span>
+                        <span class="text-2xl font-black italic">11.650 €</span>
+                    </div>
+                    <div class="bg-yellow-500 p-8 rounded-3xl text-black shadow-[0_20px_50px_rgba(251,191,36,0.2)]">
+                        <p class="text-[10px] uppercase font-black tracking-[0.2em] mb-1 opacity-70 italic text-center text-black/60">Superávit Estimado Anual</p>
+                        <h4 class="text-5xl font-black italic text-center tracking-tighter">4.500 €</h4>
+                        <p class="text-[10px] font-bold mt-4 uppercase italic border-t border-black/10 pt-4 text-center">100% Autosostenible • Sin deuda externa</p>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl min-h-[350px]">
                     <canvas id="financeChart"></canvas>
                 </div>
             </div>
@@ -118,8 +140,10 @@
 
     </main>
 
-    <footer class="p-10 text-center opacity-30 text-[8px] uppercase tracking-[0.4em] mt-10">
-        A.D. Alcotán Canarias • Dirección Deportiva Senior
+    <footer class="p-16 text-center">
+        <div class="inline-block glass-card px-6 py-2 rounded-full mb-4">
+            <p class="text-[9px] tracking-[0.6em] text-gray-500 font-bold uppercase italic">A.D. Alcotán Canarias • 2026-2027</p>
+        </div>
     </footer>
 
     <script>
@@ -128,25 +152,25 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active'));
             document.getElementById(tabId).classList.add('active');
             
-            // Vincular estado visual al botón
             const btns = document.querySelectorAll('.nav-btn');
             btns.forEach(btn => {
-                if(btn.innerText.toLowerCase().includes(tabId.substring(0,3).toLowerCase()) || (tabId === 'unirse' && btn.innerText.includes('UNIRSE'))) {
+                if(btn.innerText.toLowerCase().includes(tabId.substring(0,3).toLowerCase()) || (tabId === 'unirse' && btn.innerText.includes('CAPTACIÓN'))) {
                     btn.classList.add('nav-active');
                 }
             });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         const ctx = document.getElementById('financeChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['GASTOS', 'INGRESOS'],
+                labels: ['GASTOS BASE', 'INGRESOS PROYECTADOS'],
                 datasets: [{
                     data: [11650, 16150],
                     backgroundColor: ['#ef4444', '#fbbf24'],
-                    borderRadius: 10,
-                    barThickness: 30
+                    borderRadius: 12,
+                    barThickness: 45
                 }]
             },
             options: {
@@ -155,7 +179,7 @@
                 plugins: { legend: { display: false } },
                 scales: { 
                     y: { display: false }, 
-                    x: { ticks: { color: '#6b7280', font: { size: 9, weight: 'bold' } }, grid: { display: false } } 
+                    x: { ticks: { color: '#6b7280', font: { size: 10, weight: 'bold' } }, grid: { display: false } } 
                 }
             }
         });
