@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.D. Alcotán Canarias | Formación Inclusiva</title>
+    <title>C.D. Alcotán Canarias | Gestión Digital 26/27</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -14,167 +14,145 @@
         .tab-content.active { display: block; animation: fadeIn 0.5s ease; }
         .nav-active { border-bottom: 3px solid #fbbf24; color: #fbbf24; background: linear-gradient(to top, rgba(251, 191, 36, 0.1), transparent); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .form-container { position: relative; width: 100%; padding-top: 150%; border-radius: 1.5rem; overflow: hidden; background: #fff; }
-        @media (min-width: 768px) { .form-container { padding-top: 100%; } }
-        .form-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; filter: invert(92%) hue-rotate(180deg) brightness(1.1); }
-        .logo-img { filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.2)); max-height: 120px; }
-        .rri-box { max-height: 500px; overflow-y: auto; background: rgba(0,0,0,0.4); border: 1px solid rgba(251, 191, 36, 0.2); }
+        .form-container, .gamma-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; background: #000; border: 1px solid rgba(251, 191, 36, 0.2); }
+        .form-container { padding-top: 150%; }
+        .gamma-container { height: 600px; }
+        @media (min-width: 768px) { .form-container { padding-top: 100%; } .gamma-container { height: 750px; } }
+        iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .logo-img { filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.2)); max-height: 100px; }
+        .rri-box { max-height: 400px; overflow-y: auto; background: rgba(0,0,0,0.4); border: 1px solid rgba(251, 191, 36, 0.2); }
+        .cta-btn { transition: all 0.3s ease; border: 1px solid #fbbf24; }
+        .cta-btn:hover { background: #fbbf24; color: #000; transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <header class="py-10 flex flex-col items-center justify-center border-b border-yellow-500/10 text-center bg-black px-4">
+    <header class="py-8 flex flex-col items-center justify-center border-b border-yellow-500/10 text-center bg-black px-4">
         <img src="img/logo.png" alt="C.D. Alcotán Canarias" class="logo-img mb-4">
-        <h1 class="text-4xl md:text-5xl font-black italic tracking-tighter text-yellow-500 uppercase">ALCOTÁN CANARIAS</h1>
-        <p class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mt-2 uppercase italic">Sede Principal: Cuevas Torres</p>
+        <h1 class="text-3xl md:text-5xl font-black italic tracking-tighter text-yellow-500 uppercase">ALCOTÁN CANARIAS</h1>
+        <p class="text-[9px] font-bold tracking-[0.4em] text-gray-500 mt-2 uppercase italic">Sede Principal: Cuevas Torres</p>
     </header>
 
     <nav class="sticky top-0 z-50 glass-card border-b border-white/5 bg-black/90">
         <div class="flex justify-start md:justify-center overflow-x-auto no-scrollbar">
-            <button onclick="showTab(event, 'inicio')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest nav-active">Inicio</button>
-            <button onclick="showTab(event, 'inscripcion')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Inscripción</button>
-            <button onclick="showTab(event, 'metodologia')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Metodología</button>
-            <button onclick="showTab(event, 'seguridad')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Seguridad</button>
-            <button onclick="showTab(event, 'tecnologia')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-widest">Tecnología</button>
+            <button onclick="showTab(event, 'inicio')" class="nav-btn px-5 py-4 text-[9px] font-black uppercase tracking-widest nav-active">Inicio</button>
+            <button onclick="showTab(event, 'dossier')" class="nav-btn px-5 py-4 text-[9px] font-black uppercase tracking-widest text-yellow-500">Dossier 360</button>
+            <button onclick="showTab(event, 'inscripcion')" class="nav-btn px-5 py-4 text-[9px] font-black uppercase tracking-widest">Inscripción</button>
+            <button onclick="showTab(event, 'metodologia')" class="nav-btn px-5 py-4 text-[9px] font-black uppercase tracking-widest">Metodología</button>
+            <button onclick="showTab(event, 'seguridad')" class="nav-btn px-5 py-4 text-[9px] font-black uppercase tracking-widest">Seguridad</button>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto p-4 md:p-10 space-y-16">
 
-        <!-- SECCIÓN: INICIO -->
-        <section id="inicio" class="tab-content active space-y-12">
+        <!-- INICIO -->
+        <section id="inicio" class="tab-content active space-y-10">
             <div class="w-full max-w-5xl mx-auto">
-                <img src="img/banner.png" alt="Bienvenido al C.D. Alcotán Canarias" class="w-full rounded-[2rem] shadow-2xl border border-white/10">
+                <img src="img/banner.png" alt="Bienvenido" class="w-full rounded-[2rem] shadow-2xl border border-white/10">
             </div>
             <div class="text-center space-y-6 max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-6xl font-black italic text-white uppercase tracking-tighter">DONDE EL FÚTBOL VUELVE A SER <span class="text-yellow-500">DE LOS NIÑOS</span></h2>
-                <p class="text-gray-400 text-sm md:text-base leading-relaxed uppercase italic">
-                    Un modelo inclusivo y formativo en Ciudad Alta. Priorizamos el aprendizaje, la seguridad y la cohesión social, garantizando un entorno libre de presiones competitivas.
+                <h2 class="text-3xl md:text-6xl font-black italic text-white uppercase tracking-tighter">EL FÚTBOL VUELVE A SER <span class="text-yellow-500">DE LOS NIÑOS</span></h2>
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed uppercase italic px-4">
+                    Un proyecto pionero de cohesión social en Ciudad Alta. Priorizamos la formación y el entorno seguro por encima de cualquier marcador.
                 </p>
+                <div class="pt-4">
+                    <button onclick="showTab(event, 'dossier')" class="cta-btn px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">
+                        Explorar el Proyecto Completo <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: INSCRIPCIÓN Y RRI COMPLETO -->
-        <section id="inscripcion" class="tab-content space-y-10">
+        <!-- DOSSIER GAMMA -->
+        <section id="dossier" class="tab-content space-y-8">
             <div class="text-center">
-                <h2 class="text-3xl font-black uppercase text-white italic">RESERVA TU <span class="text-yellow-500">PLAZA 26/27</span></h2>
-                <p class="text-gray-400 text-[10px] mt-2 uppercase tracking-widest">Aceptación obligatoria del RRI para tramitar la ficha federativa</p>
+                <h2 class="text-2xl font-black uppercase text-white italic">VISIÓN <span class="text-yellow-500">ESTRATÉGICA 360</span></h2>
+                <p class="text-gray-500 text-[9px] mt-2 uppercase tracking-[0.3em]">Presentación Interactiva del C.D. Alcotán Canarias</p>
             </div>
+            <div class="gamma-container shadow-2xl">
+                <iframe src="https://gamma.app/embed/k07rz9opfhvv7op" allow="fullscreen" title="Dossier Alcotán Canarias"></iframe>
+            </div>
+            <div class="flex justify-center">
+                <button onclick="showTab(event, 'inscripcion')" class="cta-btn px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest bg-yellow-500 text-black">
+                    Inscribirse Ahora <i class="fas fa-edit ml-2"></i>
+                </button>
+            </div>
+        </section>
 
-            <!-- REGLAMENTO DE RÉGIMEN INTERNO COMPLETO -->
+        <!-- INSCRIPCIÓN Y RRI -->
+        <section id="inscripcion" class="tab-content space-y-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-black uppercase text-white italic text-yellow-500">RESERVA DE PLAZA</h2>
+                <p class="text-gray-400 text-[9px] mt-2 uppercase tracking-widest">Es obligatorio aceptar el RRI para tramitar la ficha</p>
+            </div>
             <div class="glass-card p-6 md:p-8 rounded-3xl border-t-4 border-yellow-500">
-                <h3 class="text-sm font-black text-yellow-500 uppercase mb-4 italic"><i class="fas fa-file-contract mr-2"></i> Reglamento de Régimen Interno (RRI)</h3>
-                <div class="rri-box p-6 rounded-xl text-[11px] text-gray-300 space-y-5 uppercase leading-relaxed font-bold">
-                    <p><span class="text-yellow-500">1. FILOSOFÍA MEC:</span> Prioridad absoluta a la Motivación, Esfuerzo y Constancia sobre el resultado. Formamos personas antes que futbolistas.</p>
-                    <p><span class="text-yellow-500">2. GARANTÍA DE PARTICIPACIÓN:</span> El club garantiza por contrato el 50% de los minutos a cada deportista en todos los partidos oficiales.</p>
-                    <p><span class="text-yellow-500">3. PROTECCIÓN DEL MENOR (LOPIVI):</span> Entorno seguro libre de violencia. Obligación de reportar cualquier anomalía al Delegado de Protección.</p>
-                    <p><span class="text-yellow-500">4. COMUNICACIÓN OFICIAL:</span> Prohibidos los grupos de mensajería paralelos o contacto privado con técnicos. Solo canales oficiales del club.</p>
-                    <p><span class="text-yellow-500">5. CONDUCTA EN GRADA:</span> Respeto total a árbitros, rivales y técnicos. Queda prohibido dar instrucciones técnicas desde la grada.</p>
-                    <p><span class="text-yellow-500">6. SOSTENIBILIDAD ECONÓMICA:</span> Compromiso de abono de la cuota social de 30€ entre los días 1 y 5 de cada mes.</p>
-                    <p><span class="text-yellow-500">7. COMPROMISO DE CONSTANCIA:</span> La puntualidad y asistencia son la base del aprendizaje. Presencia 15 min antes de cada actividad.</p>
-                    <p><span class="text-yellow-500">8. IDENTIDAD E IMAGEN:</span> Uso obligatorio de la equipación oficial en entrenamientos y partidos para proyectar los valores del club.</p>
-                    <p><span class="text-yellow-500">9. DERECHOS DE IMAGEN:</span> Autorización para fines pedagógicos e informativos supervisados por el área de protección y tecnología.</p>
-                    <p class="bg-yellow-500/10 p-3 rounded border border-yellow-500/20 text-white font-black italic">
-                        <span class="text-yellow-500">10. RESPONSABILIDAD ECONÓMICA:</span> CUALQUIER MULTA FEDERATIVA DERIVADA DEL MAL COMPORTAMIENTO DE LAS FAMILIAS SERÁ ABONADA ÍNTEGRAMENTE POR LA FAMILIA INFRACTORA. EL CLUB UTILIZARÁ MEDIDAS LEGALES PARA EL RECOBRO SI FUERA NECESARIO.
+                <h3 class="text-xs font-black text-yellow-500 uppercase mb-4 italic"><i class="fas fa-file-contract mr-2"></i> Resumen del RRI (Contrato)</h3>
+                <div class="rri-box p-4 rounded-xl text-[10px] text-gray-400 space-y-4 uppercase leading-relaxed font-bold">
+                    <p><span class="text-white">1. METODOLOGÍA MEC:</span> Formación antes que competición.</p>
+                    <p><span class="text-white">2. REGLA DEL 50%:</span> Minutos garantizados por contrato.</p>
+                    <p><span class="text-white">3. LOPIVI:</span> Entorno seguro y canal de protección activo.</p>
+                    <p><span class="text-white">4. COMUNICACIÓN:</span> Solo canales oficiales. Prohibidos grupos paralelos.</p>
+                    <p class="bg-yellow-500/10 p-3 rounded text-white italic border border-yellow-500/20">
+                        <span class="text-yellow-500">10. RESPONSABILIDAD ECONÓMICA:</span> LAS MULTAS FEDERATIVAS POR CONDUCTA DE LAS FAMILIAS SERÁN PAGADAS POR LOS INFRACTORES. EL CLUB ACTUARÁ LEGALMENTE SI ES NECESARIO.
                     </p>
-                    <p><span class="text-yellow-500">11. RÉGIMEN DISCIPLINARIO:</span> El incumplimiento grave de estos puntos conlleva la baja definitiva de la familia y el deportista del club.</p>
                 </div>
                 <div class="mt-6 flex items-center gap-3">
-                    <input type="checkbox" id="acepto-rri" class="w-5 h-5 accent-yellow-500">
-                    <label for="acepto-rri" class="text-[10px] font-bold text-white uppercase italic">He leído y acepto el RRI completo y la responsabilidad económica del Punto 10</label>
+                    <input type="checkbox" id="acepto-rri" class="w-4 h-4 accent-yellow-500">
+                    <label for="acepto-rri" class="text-[9px] font-bold text-white uppercase italic">He leído y acepto el RRI y la responsabilidad del punto 10</label>
                 </div>
             </div>
-
-            <div class="form-container shadow-2xl border border-yellow-500/20">
+            <div class="form-container shadow-2xl">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj2RGIiWNmTQOXIKryUilu0IExKaCZhkqPxKye50BrM2mErQ/viewform?embedded=true">Cargando…</iframe>
             </div>
         </section>
 
-        <!-- SECCIÓN: METODOLOGÍA (RESTAURADA) -->
-        <section id="metodologia" class="tab-content space-y-12">
-            <div class="mb-12 glass-card p-6 md:p-8 rounded-[2rem] border-l-4 border-yellow-500 flex flex-col md:flex-row gap-8 items-center bg-gradient-to-r from-black/60 to-transparent">
+        <!-- METODOLOGÍA -->
+        <section id="metodologia" class="tab-content space-y-10">
+            <div class="glass-card p-6 md:p-8 rounded-[2rem] border-l-4 border-yellow-500 flex flex-col md:flex-row gap-8 items-center bg-black/40">
                 <div class="md:w-1/3">
                     <img src="img/presentacion-samy.png" alt="Samy Martín" class="w-full rounded-2xl shadow-xl border border-white/10">
                 </div>
                 <div class="md:w-2/3 text-left space-y-4">
-                    <div class="inline-block bg-yellow-500 text-black font-black text-[10px] uppercase px-3 py-1 rounded-full tracking-widest">Dirección Deportiva</div>
-                    <h3 class="text-3xl md:text-5xl font-black italic text-white uppercase tracking-tighter">Samy Martín</h3>
-                    <p class="text-yellow-500 font-bold text-sm uppercase tracking-widest border-b border-white/10 pb-4">Coordinador de Base y Creador del Sistema MEC</p>
-                    <p class="text-gray-300 text-xs leading-relaxed uppercase italic">
-                        Lideramos la formación en Cuevas Torres bajo una metodología que garantiza que el niño sea el protagonista, priorizando el proceso formativo sobre el resultado inmediato en el marcador.
+                    <div class="inline-block bg-yellow-500 text-black font-black text-[9px] uppercase px-3 py-1 rounded-full italic">Dirección Deportiva</div>
+                    <h3 class="text-3xl font-black italic text-white uppercase tracking-tighter">Samy Martín</h3>
+                    <p class="text-yellow-500 font-bold text-[11px] uppercase tracking-widest border-b border-white/10 pb-4">Coordinador de Base y Creador del Sistema MEC</p>
+                    <p class="text-gray-400 text-[11px] leading-relaxed uppercase italic">
+                        La formación en Cuevas Torres se basa en un sistema que garantiza el crecimiento del niño sin presiones externas.
                     </p>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card p-8 rounded-3xl text-center">
-                    <i class="fas fa-fire text-3xl text-yellow-500 mb-4"></i>
-                    <h4 class="font-black text-sm text-white mb-2 italic uppercase">Motivación</h4>
-                    <p class="text-[10px] text-gray-500 uppercase">Entornos positivos para despertar el talento.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl text-center">
-                    <i class="fas fa-dumbbell text-3xl text-yellow-500 mb-4"></i>
-                    <h4 class="font-black text-sm text-white mb-2 italic uppercase">Esfuerzo</h4>
-                    <p class="text-[10px] text-gray-500 uppercase">Premiamos la intención y el trabajo diario.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl text-center">
-                    <i class="fas fa-clock text-3xl text-yellow-500 mb-4"></i>
-                    <h4 class="font-black text-sm text-white mb-2 italic uppercase">Constancia</h4>
-                    <p class="text-[10px] text-gray-500 uppercase">Disciplina y valores para la vida real.</p>
+                    <div class="pt-2">
+                        <button onclick="showTab(event, 'dossier')" class="text-yellow-500 text-[10px] font-black uppercase tracking-widest hover:underline">
+                            Ver detalles de la Metodología en el Dossier <i class="fas fa-external-link-alt ml-1"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: SEGURIDAD (RESTAURADA) -->
+        <!-- SEGURIDAD -->
         <section id="seguridad" class="tab-content text-center space-y-10">
-            <h2 class="text-4xl font-black italic text-white uppercase underline decoration-yellow-500 decoration-4">COMPROMISO FAMILIAR</h2>
+            <h2 class="text-3xl font-black italic text-white uppercase underline decoration-yellow-500 decoration-4">COMPROMISO SOCIAL</h2>
             <div class="grid md:grid-cols-2 gap-8 text-left">
                 <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500">
-                    <i class="fas fa-shield-halved text-3xl text-yellow-500 mb-4"></i>
-                    <h4 class="font-black text-sm uppercase mb-2 italic">Entorno Seguro (LOPIVI)</h4>
-                    <p class="text-[11px] text-gray-400 leading-relaxed uppercase">
-                        Delegado de Protección exclusivo para garantizar un espacio libre de presiones y violencia, cumpliendo estrictamente con la Ley Orgánica 8/2021.
+                    <i class="fas fa-shield-halved text-2xl text-yellow-500 mb-4"></i>
+                    <h4 class="font-black text-xs uppercase mb-2 italic">Entorno LOPIVI</h4>
+                    <p class="text-[10px] text-gray-500 uppercase leading-relaxed">
+                        Delegado de protección activo para garantizar que Cuevas Torres sea un espacio libre de violencia.
                     </p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl border-t-4 border-yellow-500">
-                    <i class="fas fa-mobile-screen text-3xl text-yellow-500 mb-4"></i>
-                    <h4 class="font-black text-sm uppercase mb-2 italic">Comunicación Blindada</h4>
-                    <p class="text-[11px] text-gray-400 leading-relaxed uppercase">
-                        Comunidad Oficial unidireccional y supervisada. Protegemos la privacidad eliminando grupos de WhatsApp caóticos e inseguros.
+                    <i class="fas fa-lock text-2xl text-yellow-500 mb-4"></i>
+                    <h4 class="font-black text-xs uppercase mb-2 italic">Privacidad Blindada</h4>
+                    <p class="text-[10px] text-gray-500 uppercase leading-relaxed">
+                        Comunicación unidireccional para proteger la intimidad de las familias y evitar conflictos digitales.
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN: TECNOLOGÍA -->
-        <section id="tecnologia" class="tab-content space-y-12">
-            <div class="text-center space-y-4">
-                <h2 class="text-4xl font-black italic text-white uppercase tracking-tighter">CENTRO DIGITAL <span class="text-yellow-500">ALCOTÁN</span></h2>
-                <p class="text-gray-400 text-xs uppercase italic">Inteligencia Artificial aplicada a la formación y transparencia del club</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl text-center border-t border-white/5">
-                    <i class="fas fa-users text-4xl text-yellow-500 mb-6"></i>
-                    <h4 class="font-black text-xs uppercase text-white mb-2">Área Familias</h4>
-                    <p class="text-[10px] text-gray-500 uppercase">Seguimiento MEC y control de cuotas mensual.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl text-center border-t-4 border-yellow-500">
-                    <i class="fas fa-stopwatch text-4xl text-yellow-500 mb-6"></i>
-                    <h4 class="font-black text-xs uppercase text-white mb-2">Área Entrenadores</h4>
-                    <p class="text-[10px] text-gray-500 uppercase">Control de KPIs y reparto de minutos (50%).</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl text-center border-t border-white/5">
-                    <i class="fas fa-chart-pie text-4xl text-yellow-500 mb-6"></i>
-                    <h4 class="font-black text-xs uppercase text-white mb-2">Área Directiva</h4>
-                    <p class="text-[10px] text-gray-500 uppercase">Transparencia económica y buzón LOPIVI.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="py-20 text-center opacity-40 border-t border-white/5 bg-black">
-        <p class="text-[9px] tracking-[0.5em] text-gray-500 font-bold uppercase italic">C.D. Alcotán Canarias • 2026-2027</p>
+    <footer class="py-12 text-center opacity-30 border-t border-white/5">
+        <p class="text-[8px] tracking-[0.5em] text-gray-500 font-bold uppercase italic">C.D. Alcotán Canarias • Las Palmas de G.C. • 2026</p>
     </footer>
 
     <script>
@@ -183,12 +161,17 @@
             contents.forEach(c => c.style.display = 'none');
             const btns = document.querySelectorAll('.nav-btn');
             btns.forEach(b => b.classList.remove('nav-active'));
+            
             const activeTab = document.getElementById(tabId);
             if(activeTab) activeTab.style.display = 'block';
-            if (event && event.currentTarget) {
+            
+            // Si el evento existe (click en nav), marcar el botón
+            if (event && event.currentTarget && event.currentTarget.classList.contains('nav-btn')) {
                 event.currentTarget.classList.add('nav-active');
             } else {
-                document.querySelector(`button[onclick*="'${tabId}'"]`).classList.add('nav-active');
+                // Si viene de un CTA, buscar el botón de nav correspondiente
+                const targetBtn = document.querySelector(`button[onclick*="'${tabId}'"]`);
+                if(targetBtn) targetBtn.classList.add('nav-active');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
