@@ -99,9 +99,12 @@
 
         /* Plazas */
         .plazas-bar-bg { background: rgba(255,255,255,0.06); border-radius: 99px; height: 6px; }
-        .plazas-bar-fill { background: linear-gradient(90deg, #fbbf24, #f59e0b); border-radius: 99px; height: 6px; transition: width 1s ease; }
+        .plazas-bar-fill { background: linear-gradient(90deg, #fbbf24, #f59e0b); border-radius: 99px; height: 6px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+        .plazas-bar-fill.completo { background: linear-gradient(90deg, #ef4444, #dc2626); }
+        .plazas-bar-fill.urgente  { background: linear-gradient(90deg, #f97316, #ea580c); }
         .plazas-card { border: 1px solid rgba(251,191,36,0.2); background: rgba(251,191,36,0.03); transition: border-color 0.3s; }
         .plazas-card:hover { border-color: rgba(251,191,36,0.5); }
+        .plazas-card.completo-card { border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.04); }
 
         /* FAQ */
         .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
@@ -265,7 +268,7 @@
                 <p class="text-[9px] text-gray-600 uppercase font-bold text-center">* Categoría Infantil: campo e horario pendiente de confirmar. Contacta por WhatsApp para info actualizada.</p>
             </div>
 
-            <!-- Plazas por categoría -->
+            <!-- Plazas por categoría (datos en tiempo real desde Google Sheets) -->
             <div class="space-y-4">
                 <div class="text-center space-y-2">
                     <h3 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter">
@@ -274,66 +277,69 @@
                     <p class="text-gray-500 text-[10px] uppercase font-black tracking-widest">Un equipo por categoría · Se respeta el orden de inscripción</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-4">
-                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="mini">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Mini-prebenjamín</p>
                                 <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2022 · 2021 · A partir de 4 años</p>
                             </div>
-                            <p class="text-yellow-500 font-black text-lg">15</p>
+                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/15</p>
                         </div>
-                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
-                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
+                        <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="prebenjamin">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Prebenjamín</p>
                                 <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2020 · 2019</p>
                             </div>
-                            <p class="text-yellow-500 font-black text-lg">15</p>
+                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/15</p>
                         </div>
-                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
-                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
+                        <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="benjamin">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Benjamín</p>
                                 <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2018 · 2017</p>
                             </div>
-                            <p class="text-yellow-500 font-black text-lg">15</p>
+                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/15</p>
                         </div>
-                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
-                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
+                        <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="alevin">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Alevín</p>
                                 <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2016 · 2015</p>
                             </div>
-                            <p class="text-yellow-500 font-black text-lg">15</p>
+                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/15</p>
                         </div>
-                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
-                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
+                        <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3 md:col-span-2">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3 md:col-span-2" data-category="infantil">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Infantil</p>
                                 <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2014 · 2013</p>
                             </div>
-                            <p class="text-yellow-500 font-black text-lg">15</p>
+                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/15</p>
                         </div>
-                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
-                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
+                        <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
                 </div>
-                <p class="text-center text-[9px] text-gray-600 uppercase font-bold pt-2">
-                    <i class="fas fa-info-circle mr-1 text-yellow-500/60"></i>
-                    Las plazas se asignan por estricto orden de formulario recibido. Una vez completo el equipo, lista de espera.
-                </p>
+                <div class="flex justify-between items-center pt-2 px-1">
+                    <p class="text-[9px] text-gray-600 uppercase font-bold">
+                        <i class="fas fa-info-circle mr-1 text-yellow-500/60"></i>
+                        Orden de formulario recibido · Equipo completo → lista de espera
+                    </p>
+                    <p id="plazas-updated" class="text-[9px] text-gray-700 uppercase font-bold"></p>
+                </div>
             </div>
 
             <!-- Bloque Puertas Abiertas / Captación -->
@@ -685,13 +691,72 @@
             if (el) trackClick(el.dataset.track);
         });
 
-        /* Animar barras de plazas al cargar */
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.plazas-bar-fill').forEach(bar => {
-                const target = bar.dataset.target || '0%';
-                setTimeout(() => { bar.style.width = target; }, 300);
-            });
-        });
+        /* ═══ Plazas en tiempo real — Google Sheets ═══
+         * Pega aquí la URL del Apps Script una vez desplegado.
+         * Instrucciones en apps-script/plazas.gs del repositorio.
+         */
+        const APPS_SCRIPT_URL = 'PENDIENTE_CONFIGURAR';
+        const TOTAL_PLAZAS = 15;
+
+        async function actualizarPlazas() {
+            if (APPS_SCRIPT_URL === 'PENDIENTE_CONFIGURAR') {
+                document.querySelectorAll('.plazas-label').forEach(el => {
+                    el.textContent = 'Inscripciones abiertas · Plazas disponibles';
+                });
+                document.querySelectorAll('.plazas-numero').forEach(el => {
+                    el.textContent = '15';
+                });
+                return;
+            }
+            try {
+                const res  = await fetch(APPS_SCRIPT_URL);
+                const data = await res.json();
+                if (!data.ok) return;
+
+                Object.entries(data.counts).forEach(([cat, count]) => {
+                    const card = document.querySelector(`[data-category="${cat}"]`);
+                    if (!card) return;
+
+                    const libre  = TOTAL_PLAZAS - count;
+                    const pct    = Math.min(Math.round((count / TOTAL_PLAZAS) * 100), 100);
+                    const bar    = card.querySelector('.plazas-bar-fill');
+                    const numero = card.querySelector('.plazas-numero');
+                    const label  = card.querySelector('.plazas-label');
+
+                    if (bar) {
+                        setTimeout(() => { bar.style.width = pct + '%'; }, 200);
+                        bar.classList.toggle('completo', libre <= 0);
+                        bar.classList.toggle('urgente',  libre > 0 && libre <= 4);
+                    }
+                    if (numero) {
+                        numero.textContent = `${count}/${TOTAL_PLAZAS}`;
+                        numero.className = `plazas-numero font-black text-lg ${libre <= 0 ? 'text-red-400' : libre <= 4 ? 'text-orange-400' : 'text-yellow-500'}`;
+                    }
+                    if (label) {
+                        if (libre <= 0) {
+                            label.textContent = '¡COMPLETO! — Lista de espera';
+                            label.className = 'plazas-label text-[9px] text-red-400 uppercase font-black';
+                            card.classList.add('completo-card');
+                        } else if (libre <= 4) {
+                            label.textContent = `⚠ Solo ${libre} plaza${libre > 1 ? 's' : ''} libre${libre > 1 ? 's' : ''}`;
+                            label.className = 'plazas-label text-[9px] text-orange-400 uppercase font-black';
+                        } else {
+                            label.textContent = `${libre} plazas disponibles · Inscríbete ya`;
+                            label.className = 'plazas-label text-[9px] text-gray-500 uppercase font-bold';
+                        }
+                    }
+                });
+
+                const updEl = document.getElementById('plazas-updated');
+                if (updEl && data.updated) updEl.textContent = `↻ ${data.updated}`;
+
+            } catch(e) {
+                console.log('Plazas: sin conexión con el servidor');
+            }
+        }
+
+        actualizarPlazas();
+        setInterval(actualizarPlazas, 5 * 60 * 1000); // refresco cada 5 min
 
         /* Registrar visita */
         (function() {
