@@ -48,6 +48,20 @@
         .cta-action { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .cta-action:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); }
         .logo-glow { filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.2)); }
+
+        /* Bloque captación */
+        .captacion-card {
+            background: linear-gradient(135deg, rgba(251,191,36,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(251,191,36,0.25);
+            transition: border-color 0.4s;
+        }
+        .captacion-card:hover { border-color: rgba(251,191,36,0.6); }
+        .captacion-img {
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s;
+        }
+        .captacion-img:hover { transform: scale(1.015); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
     </style>
 </head>
 <body>
@@ -83,6 +97,33 @@
                 <div class="pt-4">
                     <button onclick="showTab(null, 'dossier')" class="cta-action bg-yellow-500 text-black px-12 py-4 rounded-full text-[11px] font-black uppercase tracking-widest">
                         Explorar Proyecto 26/27 <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Bloque Puertas Abiertas / Captación -->
+            <div class="captacion-card rounded-[2.5rem] p-6 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="img/captacion-puertas-abiertas.png"
+                         alt="C.D. Alcotán Canarias — Súmate a nuestro equipo. Fútbol Base desde 4 años. Metodología MEC."
+                         class="captacion-img w-full">
+                </div>
+                <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                    <p class="text-[9px] font-black tracking-[0.5em] text-yellow-500 uppercase italic">Puertas Abiertas · Temporada 26/27</p>
+                    <h3 class="text-3xl md:text-4xl font-black italic uppercase tracking-tighter leading-tight">
+                        ¡SÚMATE A <br><span class="text-yellow-500">NUESTRO EQUIPO!</span>
+                    </h3>
+                    <p class="text-gray-400 text-[11px] md:text-xs leading-relaxed uppercase italic">
+                        Fútbol Base desde los 4 años. Categorías Mini-prebenjamín, Prebenjamín, Benjamín, Alevín e Infantil. Formación integral bajo la Metodología MEC: Motivación, Esfuerzo y Constancia.
+                    </p>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start text-[9px] font-black uppercase">
+                        <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Mini-prebenjamín</span>
+                        <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Prebenjamín</span>
+                        <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Benjamín</span>
+                        <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Alevín</span>
+                        <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Infantil</span>
+                    </div>
+                    <button onclick="showTab(null, 'inscripcion')" class="cta-action bg-yellow-500 text-black px-10 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">
+                        Reservar Plaza Ahora <i class="fas fa-futbol ml-2"></i>
                     </button>
                 </div>
             </div>
@@ -147,6 +188,13 @@
                         He leído y acepto el RRI y la responsabilidad económica del Punto 10
                     </label>
                 </div>
+            </div>
+
+            <!-- Imagen captación como referencia visual antes del formulario -->
+            <div class="flex justify-center">
+                <img src="img/captacion-puertas-abiertas.png"
+                     alt="Flyer Puertas Abiertas C.D. Alcotán Canarias — Fútbol Base Temporada 26/27"
+                     class="captacion-img w-full max-w-xl">
             </div>
 
             <div class="iframe-container h-form shadow-2xl">
