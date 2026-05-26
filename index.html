@@ -3,109 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.D. Alcotán Canarias | Gestión Profesional 26/27</title>
+
+    <!-- ═══ SEO ═══ -->
+    <title>C.D. Alcotán Canarias | Fútbol Base Ciudad Alta · Inscripciones 26/27</title>
+    <meta name="description" content="Club de fútbol base en Ciudad Alta, Las Palmas. Categorías desde 4 años (Mini-prebenjamín hasta Infantil). Metodología MEC · Plazas limitadas temporada 26/27. Inscríbete ya.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://academiasmfutbol.github.io/Alcotan/">
+
+    <!-- ═══ Open Graph (WhatsApp, Facebook, Telegram) ═══ -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://academiasmfutbol.github.io/Alcotan/">
+    <meta property="og:title"       content="C.D. Alcotán Canarias — ¡Súmate a nuestro equipo!">
+    <meta property="og:description" content="Fútbol Base en Ciudad Alta desde los 4 años. Metodología MEC · Formación integral · Plazas limitadas temporada 26/27. Inscripciones abiertas.">
+    <meta property="og:image"       content="https://academiasmfutbol.github.io/Alcotan/img/captacion-puertas-abiertas.png">
+    <meta property="og:image:width" content="1536">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:locale"      content="es_ES">
+    <meta property="og:site_name"   content="C.D. Alcotán Canarias">
+
+    <!-- ═══ Twitter Card ═══ -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="C.D. Alcotán Canarias — ¡Súmate a nuestro equipo!">
+    <meta name="twitter:description" content="Fútbol Base desde los 4 años en Ciudad Alta. Metodología MEC. Inscripciones 26/27.">
+    <meta name="twitter:image"       content="https://academiasmfutbol.github.io/Alcotan/img/captacion-puertas-abiertas.png">
+
+    <!-- ═══ Schema.org ═══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "C.D. Alcotán Canarias",
+      "url": "https://academiasmfutbol.github.io/Alcotan/",
+      "logo": "https://academiasmfutbol.github.io/Alcotan/img/logo.png",
+      "image": "https://academiasmfutbol.github.io/Alcotan/img/captacion-puertas-abiertas.png",
+      "description": "Club de fútbol base en Ciudad Alta, Las Palmas de Gran Canaria. Categorías desde 4 años bajo la Metodología MEC: Motivación, Esfuerzo y Constancia.",
+      "telephone": "+34625468296",
+      "sport": "Fútbol",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cancha Cuevas Torres, Urb. Cinco Continentes s/n",
+        "addressLocality": "Las Palmas de Gran Canaria",
+        "addressRegion": "Canarias",
+        "addressCountry": "ES"
+      },
+      "areaServed": "Ciudad Alta, Las Palmas de Gran Canaria",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34625468296",
+        "contactType": "customer service",
+        "availableLanguage": "Spanish"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
     <style>
         body { font-family: 'Inter', sans-serif; background: #050505; color: #f3f4f6; margin: 0; -webkit-font-smoothing: antialiased; }
-        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-        
-        /* Sistema de pestañas */
+        .glass-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+
+        /* Pestañas */
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.5s ease-out; }
-        .nav-active { border-bottom: 3px solid #fbbf24; color: #fbbf24; background: linear-gradient(to top, rgba(251, 191, 36, 0.1), transparent); }
-        
+        .nav-active { border-bottom: 3px solid #fbbf24; color: #fbbf24; background: linear-gradient(to top, rgba(251,191,36,0.1), transparent); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Contenedores de iFrames */
-        .iframe-container { 
-            position: relative; 
-            width: 100%; 
-            border-radius: 1.5rem; 
-            overflow: hidden; 
-            background: #000; 
-            border: 1px solid rgba(251, 191, 36, 0.2); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-        
-        /* Alturas dinámicas para asegurar visibilidad */
-        .h-form { padding-top: 150%; } 
-        .h-gamma { height: 650px; } 
-        
-        @media (min-width: 768px) { 
-            .h-form { padding-top: 100%; } 
-            .h-gamma { height: 820px; } 
-        }
 
+        /* iFrames */
+        .iframe-container { position: relative; width: 100%; border-radius: 1.5rem; overflow: hidden; background: #000; border: 1px solid rgba(251,191,36,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .h-form { padding-top: 150%; }
+        .h-gamma { height: 650px; }
+        @media (min-width: 768px) { .h-form { padding-top: 100%; } .h-gamma { height: 820px; } }
         iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        /* Estilos RRI */
+        /* RRI */
         .rri-box { max-height: 480px; overflow-y: auto; scroll-behavior: smooth; padding-right: 15px; }
         .rri-box::-webkit-scrollbar { width: 5px; }
         .rri-box::-webkit-scrollbar-thumb { background: #fbbf24; border-radius: 10px; }
-        
-        .cta-action { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .cta-action:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); }
-        .logo-glow { filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.2)); }
 
-        /* Bloque captación */
-        .captacion-card {
-            background: linear-gradient(135deg, rgba(251,191,36,0.05) 0%, rgba(255,255,255,0.02) 100%);
-            border: 1px solid rgba(251,191,36,0.25);
-            transition: border-color 0.4s;
-        }
+        /* CTAs */
+        .cta-action { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .cta-action:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(251,191,36,0.3); }
+        .logo-glow { filter: drop-shadow(0 0 15px rgba(251,191,36,0.2)); }
+
+        /* Captación */
+        .captacion-card { background: linear-gradient(135deg, rgba(251,191,36,0.05) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(251,191,36,0.25); transition: border-color 0.4s; }
         .captacion-card:hover { border-color: rgba(251,191,36,0.6); }
-        .captacion-img {
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s;
-        }
+        .captacion-img { border-radius: 1.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.7); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s; }
         .captacion-img:hover { transform: scale(1.015); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+
+        /* Horarios */
+        .horario-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.3s; }
+        .horario-card:hover { border-color: rgba(251,191,36,0.4); }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+        .faq-answer.open { max-height: 200px; }
+        .faq-icon { transition: transform 0.3s; }
+        .faq-icon.open { transform: rotate(45deg); }
+
+        /* WhatsApp flotante */
+        .whatsapp-fab {
+            position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+            width: 60px; height: 60px;
+            background: #25D366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.7); }
+        .whatsapp-fab .fab-tooltip {
+            position: absolute; right: 70px; white-space: nowrap;
+            background: #111; color: #fff; font-size: 11px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 8px 14px; border-radius: 20px;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .whatsapp-fab:hover .fab-tooltip { opacity: 1; }
+
+        /* Panel analítica */
+        #analytics-panel {
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 9999; background: #111; border: 1px solid rgba(251,191,36,0.4);
+            border-radius: 1.5rem; padding: 32px; min-width: 320px; max-width: 480px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+        }
+        #analytics-panel.visible { display: block; animation: fadeIn 0.3s ease; }
+        #analytics-overlay { display: none; position: fixed; inset: 0; z-index: 9998; background: rgba(0,0,0,0.7); }
+        #analytics-overlay.visible { display: block; }
+
+        /* Urgencia badge */
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(251,191,36,0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(251,191,36,0); }
+            100% { box-shadow: 0 0 0 0 rgba(251,191,36,0); }
+        }
+        .urgencia-badge { animation: pulse-ring 2s infinite; }
     </style>
 </head>
 <body>
 
+    <!-- ═══ WhatsApp flotante ═══ -->
+    <a href="https://wa.me/34625468296?text=Hola%20Samy%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20el%20C.D.%20Alcot%C3%A1n%20Canarias%20para%20la%20temporada%2026%2F27"
+       target="_blank" rel="noopener noreferrer"
+       class="whatsapp-fab" aria-label="Contactar por WhatsApp" data-track="whatsapp-fab">
+        <span class="fab-tooltip">Samy · Coordinador</span>
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- ═══ Panel analítica (doble clic en logo footer) ═══ -->
+    <div id="analytics-overlay" onclick="closeAnalytics()"></div>
+    <div id="analytics-panel">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-yellow-500 font-black text-sm uppercase tracking-widest">Panel de Interacciones</h2>
+            <button onclick="closeAnalytics()" class="text-gray-500 hover:text-white text-xl">&times;</button>
+        </div>
+        <p class="text-[10px] text-gray-500 uppercase mb-4 font-bold">Clics acumulados en este navegador</p>
+        <div id="analytics-data" class="space-y-2"></div>
+        <div class="mt-6 pt-4 border-t border-white/10">
+            <p class="text-[9px] text-gray-600 uppercase leading-relaxed">Para visitas únicas totales, consulta <span class="text-yellow-500">github.com/academiasmfutbol/Alcotan → Insights → Traffic</span></p>
+            <button onclick="resetAnalytics()" class="mt-4 text-[9px] text-red-400 uppercase font-black border border-red-400/30 px-4 py-2 rounded-full hover:bg-red-400/10 transition">Reiniciar contadores</button>
+        </div>
+    </div>
+
+    <!-- ═══ Header ═══ -->
     <header class="py-12 flex flex-col items-center justify-center border-b border-white/5 text-center bg-black px-4">
-        <img src="img/logo.png" alt="C.D. Alcotán Canarias" class="max-h-28 mb-4 logo-glow">
+        <img src="img/logo.png" alt="C.D. Alcotán Canarias — Club de Fútbol Base Ciudad Alta" class="max-h-28 mb-4 logo-glow">
         <h1 class="text-4xl md:text-6xl font-black italic tracking-tighter text-yellow-500 uppercase">ALCOTÁN CANARIAS</h1>
         <p class="text-[10px] font-bold tracking-[0.5em] text-gray-500 mt-3 uppercase italic">Proyecto Formativo • Ciudad Alta</p>
+        <!-- Urgencia -->
+        <div class="mt-6 urgencia-badge inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/50 text-yellow-400 text-[9px] font-black uppercase tracking-widest px-5 py-2 rounded-full">
+            <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
+            Inscripciones abiertas · Plazas limitadas · Temporada 26/27
+        </div>
     </header>
 
+    <!-- ═══ Nav ═══ -->
     <nav class="sticky top-0 z-50 glass-card border-b border-white/5 bg-black/90">
         <div class="flex justify-start md:justify-center overflow-x-auto no-scrollbar">
-            <button onclick="showTab(event, 'inicio')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] nav-active">Inicio</button>
-            <button onclick="showTab(event, 'dossier')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-yellow-500">Dossier 360</button>
-            <button onclick="showTab(event, 'inscripcion')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em]">Inscripción</button>
-            <button onclick="showTab(event, 'metodologia')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em]">Metodología</button>
-            <button onclick="showTab(event, 'seguridad')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em]">Seguridad</button>
+            <button onclick="showTab(event,'inicio')"      class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] nav-active"  data-track="tab-inicio">Inicio</button>
+            <button onclick="showTab(event,'dossier')"     class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-yellow-500" data-track="tab-dossier">Dossier 360</button>
+            <button onclick="showTab(event,'inscripcion')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em]" data-track="tab-inscripcion">Inscripción</button>
+            <button onclick="showTab(event,'metodologia')" class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em]" data-track="tab-metodologia">Metodología</button>
+            <button onclick="showTab(event,'seguridad')"   class="nav-btn px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em]" data-track="tab-seguridad">Seguridad</button>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto p-4 md:p-10 space-y-24">
 
+        <!-- ═══════════════ INICIO ═══════════════ -->
         <section id="inicio" class="tab-content active space-y-12">
+
+            <!-- Banner principal -->
             <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10">
-                <img src="img/banner.png" alt="Alcotán Canarias" class="w-full object-cover">
+                <img src="img/banner.png" alt="C.D. Alcotán Canarias — Fútbol Base Ciudad Alta" class="w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
             </div>
+
+            <!-- Titular + CTAs dobles -->
             <div class="text-center space-y-8 max-w-4xl mx-auto">
-                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">EL FÚTBOL VUELVE A <br><span class="text-yellow-500 underline decoration-yellow-500/20">SER DE ELLOS</span></h2>
+                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+                    EL FÚTBOL VUELVE A <br><span class="text-yellow-500 underline decoration-yellow-500/20">SER DE ELLOS</span>
+                </h2>
                 <p class="text-gray-400 text-sm md:text-base uppercase italic leading-relaxed tracking-wide px-4">
                     Un espacio donde el aprendizaje integral y la seguridad de los menores son nuestra única prioridad competitiva.
                 </p>
-                <div class="pt-4">
-                    <button onclick="showTab(null, 'dossier')" class="cta-action bg-yellow-500 text-black px-12 py-4 rounded-full text-[11px] font-black uppercase tracking-widest">
-                        Explorar Proyecto 26/27 <i class="fas fa-arrow-right ml-2"></i>
+                <!-- CTAs: primario → Inscripción / secundario → Dossier -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <button onclick="showTab(null,'inscripcion')"
+                            class="cta-action bg-yellow-500 text-black px-10 py-4 rounded-full text-[11px] font-black uppercase tracking-widest"
+                            data-track="cta-reservar-inicio">
+                        Reservar Plaza 26/27 <i class="fas fa-futbol ml-2"></i>
+                    </button>
+                    <button onclick="showTab(null,'dossier')"
+                            class="cta-action border border-white/20 text-gray-300 px-10 py-4 rounded-full text-[11px] font-black uppercase tracking-widest hover:border-yellow-500/40 hover:text-white"
+                            data-track="cta-dossier-inicio">
+                        Ver el Proyecto <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                 </div>
             </div>
+
+            <!-- Horarios y localización -->
+            <div class="glass-card rounded-[2.5rem] p-8 md:p-12 space-y-8">
+                <div class="flex items-center gap-4 mb-2">
+                    <i class="fas fa-map-marker-alt text-yellow-500 text-xl"></i>
+                    <div>
+                        <p class="text-[9px] font-black tracking-[0.4em] text-yellow-500 uppercase">Dónde entrenamos</p>
+                        <p class="text-white font-black uppercase text-sm md:text-base">Cancha Cuevas Torres · Urb. Cinco Continentes s/n · Ciudad Alta</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="horario-card rounded-2xl p-6 space-y-3">
+                        <p class="text-[9px] font-black tracking-widest text-yellow-500 uppercase">Alevín · Benjamín</p>
+                        <p class="text-white font-black text-lg uppercase">Lun · Mié · Vie</p>
+                        <p class="text-gray-400 font-bold text-sm uppercase">17:00 – 18:30 h</p>
+                        <div class="flex gap-2 flex-wrap mt-2">
+                            <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Benjamín · Nac. 2018–2017</span>
+                            <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Alevín · Nac. 2016–2015</span>
+                        </div>
+                    </div>
+                    <div class="horario-card rounded-2xl p-6 space-y-3">
+                        <p class="text-[9px] font-black tracking-widest text-yellow-500 uppercase">Prebenjamín · Mini</p>
+                        <p class="text-white font-black text-lg uppercase">Mar · Jue</p>
+                        <p class="text-gray-400 font-bold text-sm uppercase">17:00 – 18:30 h</p>
+                        <div class="flex gap-2 flex-wrap mt-2">
+                            <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Mini · Nac. 2022–2021</span>
+                            <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Prebenjamín · Nac. 2020–2019</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-[9px] text-gray-600 uppercase font-bold text-center">* Categoría Infantil: campo e horario pendiente de confirmar. Contacta por WhatsApp para info actualizada.</p>
+            </div>
+
             <!-- Bloque Puertas Abiertas / Captación -->
             <div class="captacion-card rounded-[2.5rem] p-6 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div class="w-full md:w-1/2">
-                    <img src="img/captacion-puertas-abiertas.png"
-                         alt="C.D. Alcotán Canarias — Súmate a nuestro equipo. Fútbol Base desde 4 años. Metodología MEC."
-                         class="captacion-img w-full">
+                    <picture>
+                        <source srcset="img/captacion-puertas-abiertas.webp" type="image/webp">
+                        <img src="img/captacion-puertas-abiertas.png"
+                             alt="C.D. Alcotán Canarias — Súmate a nuestro equipo. Fútbol Base desde 4 años. Metodología MEC. Ciudad Alta Las Palmas."
+                             class="captacion-img w-full"
+                             loading="lazy">
+                    </picture>
                 </div>
                 <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
                     <p class="text-[9px] font-black tracking-[0.5em] text-yellow-500 uppercase italic">Puertas Abiertas · Temporada 26/27</p>
@@ -113,7 +276,7 @@
                         ¡SÚMATE A <br><span class="text-yellow-500">NUESTRO EQUIPO!</span>
                     </h3>
                     <p class="text-gray-400 text-[11px] md:text-xs leading-relaxed uppercase italic">
-                        Fútbol Base desde los 4 años. Categorías Mini-prebenjamín, Prebenjamín, Benjamín, Alevín e Infantil. Formación integral bajo la Metodología MEC: Motivación, Esfuerzo y Constancia.
+                        Fútbol Base desde los 4 años. Formación integral bajo la Metodología MEC: Motivación, Esfuerzo y Constancia. Más que fútbol, formamos personas.
                     </p>
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start text-[9px] font-black uppercase">
                         <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Mini-prebenjamín</span>
@@ -122,47 +285,123 @@
                         <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Alevín</span>
                         <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Infantil</span>
                     </div>
-                    <button onclick="showTab(null, 'inscripcion')" class="cta-action bg-yellow-500 text-black px-10 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">
+                    <button onclick="showTab(null,'inscripcion')"
+                            class="cta-action bg-yellow-500 text-black px-10 py-3 rounded-full text-[10px] font-black uppercase tracking-widest"
+                            data-track="cta-reservar-captacion">
                         Reservar Plaza Ahora <i class="fas fa-futbol ml-2"></i>
                     </button>
                 </div>
             </div>
+
         </section>
 
+        <!-- ═══════════════ DOSSIER ═══════════════ -->
         <section id="dossier" class="tab-content space-y-12">
             <div class="text-center space-y-3">
                 <h2 class="text-3xl md:text-4xl font-black uppercase italic text-white">VISIÓN ESTRATÉGICA <span class="text-yellow-500">360°</span></h2>
                 <p class="text-gray-500 text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-bold">Hoja de ruta, valores y compromiso formativo</p>
             </div>
-            
             <div class="iframe-container h-gamma">
-                <iframe src="https://gamma.app/embed/k07rz9opfhvv7op" 
-                        allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        title="Dossier Alcotán Canarias"
+                <iframe src="https://gamma.app/embed/k07rz9opfhvv7op"
+                        allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        title="Dossier estratégico C.D. Alcotán Canarias temporada 26/27"
                         loading="lazy">
                 </iframe>
             </div>
-            
             <div class="flex flex-col items-center gap-6">
                 <p class="text-[10px] text-gray-500 uppercase font-black italic tracking-widest">¿Listo para formar parte de la familia?</p>
-                <button onclick="showTab(null, 'inscripcion')" class="cta-action border-2 border-yellow-500 text-yellow-500 px-12 py-4 rounded-full text-[11px] font-black uppercase tracking-widest">
-                    Formalizar Inscripción Online <i class="fas fa-clipboard-check ml-2"></i>
+                <button onclick="showTab(null,'inscripcion')"
+                        class="cta-action bg-yellow-500 text-black px-12 py-4 rounded-full text-[11px] font-black uppercase tracking-widest"
+                        data-track="cta-inscripcion-dossier">
+                    Reservar Plaza 26/27 <i class="fas fa-futbol ml-2"></i>
                 </button>
             </div>
         </section>
 
+        <!-- ═══════════════ INSCRIPCIÓN ═══════════════ -->
         <section id="inscripcion" class="tab-content space-y-12">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-black uppercase italic text-white">RESERVA DE <span class="text-yellow-500">PLAZA</span></h2>
-                <p class="text-gray-500 text-[10px] uppercase tracking-widest">El registro requiere la validación del reglamento interno</p>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest">Plazas limitadas · Temporada 26/27</p>
             </div>
 
+            <!-- FAQ -->
+            <div class="glass-card rounded-[2.5rem] p-8 md:p-12 space-y-2">
+                <h3 class="text-lg font-black text-white uppercase mb-8 italic flex items-center gap-3">
+                    <i class="fas fa-question-circle text-yellow-500"></i> Preguntas Frecuentes
+                </h3>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Dónde son los entrenamientos?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">Cancha Cuevas Torres, Urb. Cinco Continentes s/n, Ciudad Alta, Las Palmas de Gran Canaria.</p>
+                    </div>
+                </div>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Cuáles son los horarios?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-1">• Alevín y Benjamín: Lunes, Miércoles y Viernes de 17:00 a 18:30 h.</p>
+                        <p class="pb-3">• Mini-prebenjamín y Prebenjamín: Martes y Jueves de 17:00 a 18:30 h.</p>
+                    </div>
+                </div>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Cuánto cuesta la inscripción?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">La cuota social es de 30€ mensuales, abonables los primeros 5 días de cada mes. Sin matrícula adicional.</p>
+                    </div>
+                </div>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Desde qué edad se puede apuntar?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">Desde los 4 años, en la categoría Mini-prebenjamín (nacidos en 2022 y 2021). Las categorías llegan hasta Infantil.</p>
+                    </div>
+                </div>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Necesito equipación desde el primer día?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">No. Los primeros días puedes venir con ropa deportiva. La equipación oficial se gestiona a través del club una vez formalizada la inscripción.</p>
+                    </div>
+                </div>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Puedo ver un entrenamiento antes de inscribirme?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">Sí. Escríbenos por WhatsApp y coordinamos una visita sin compromiso. Queremos que la familia se sienta segura antes de dar el paso.</p>
+                    </div>
+                </div>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Qué es la Metodología MEC?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">Motivación, Esfuerzo y Constancia. Un modelo formativo que prioriza el desarrollo integral del niño sobre los resultados competitivos. Garantizamos un mínimo del 50% de minutos de juego a cada deportista.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RRI -->
             <div class="glass-card p-8 md:p-12 rounded-[2.5rem] border-t-4 border-yellow-500 shadow-2xl relative overflow-hidden">
                 <i class="fas fa-gavel absolute -right-4 -top-4 text-9xl text-white/5 rotate-12"></i>
                 <h3 class="text-lg font-black text-white uppercase mb-10 italic flex items-center">
                     <i class="fas fa-shield-alt text-yellow-500 mr-4"></i> Reglamento de Régimen Interno
                 </h3>
-                
                 <div class="rri-box space-y-6 text-[11px] text-gray-400 uppercase leading-relaxed font-bold">
                     <p><span class="text-yellow-500 mr-2">01.</span> Prioridad a la Metodología MEC sobre resultados inmediatos.</p>
                     <p><span class="text-yellow-500 mr-2">02.</span> Garantía de minutos (mínimo 50%) para cada deportista.</p>
@@ -173,15 +412,12 @@
                     <p><span class="text-yellow-500 mr-2">07.</span> Puntualidad y constancia como base del aprendizaje.</p>
                     <p><span class="text-yellow-500 mr-2">08.</span> Uso obligatorio de la equipación oficial Alcotán.</p>
                     <p><span class="text-yellow-500 mr-2">09.</span> Autorización de derechos de imagen para fines formativos.</p>
-                    
                     <div class="bg-yellow-500 text-black p-6 rounded-2xl shadow-xl border-l-8 border-white/20">
-                        <p class="text-xs font-black mb-1"><i class="fas fa-exclamation-circle mr-2"></i> CLÁUSULA DE RESPONSABILIDAD ECONÓMICA (PUNTO 10)</p>
-                        <p class="text-[10px] leading-tight">LAS SANCIONES ECONÓMICAS IMPUESTAS AL CLUB POR MAL COMPORTAMIENTO DE LAS FAMILIAS EN LA GRADA SERÁN ABONADAS POR LOS INFRACTORES. EL CLUB EJERCERÁ MEDIDAS LEGALES PARA EL RECOBRO.</p>
+                        <p class="text-xs font-black mb-1"><i class="fas fa-exclamation-circle mr-2"></i> Cláusula de Responsabilidad Económica (Punto 10)</p>
+                        <p class="text-[10px] leading-tight">Las sanciones económicas impuestas al club por mal comportamiento de las familias en la grada serán abonadas por los infractores. El club ejercerá medidas legales para el recobro.</p>
                     </div>
-
                     <p><span class="text-yellow-500 mr-2">11.</span> El incumplimiento grave supone la baja definitiva de la ficha.</p>
                 </div>
-
                 <div class="mt-10 flex items-center gap-4 bg-white/5 p-5 rounded-2xl border border-white/5">
                     <input type="checkbox" id="check-rri-final" class="w-6 h-6 accent-yellow-500 cursor-pointer">
                     <label for="check-rri-final" class="text-[10px] font-black text-white uppercase italic cursor-pointer">
@@ -190,22 +426,29 @@
                 </div>
             </div>
 
-            <!-- Imagen captación como referencia visual antes del formulario -->
+            <!-- Flyer captación antes del formulario -->
             <div class="flex justify-center">
-                <img src="img/captacion-puertas-abiertas.png"
-                     alt="Flyer Puertas Abiertas C.D. Alcotán Canarias — Fútbol Base Temporada 26/27"
-                     class="captacion-img w-full max-w-xl">
+                <picture>
+                    <source srcset="img/captacion-puertas-abiertas.webp" type="image/webp">
+                    <img src="img/captacion-puertas-abiertas.png"
+                         alt="Flyer Puertas Abiertas C.D. Alcotán Canarias — Fútbol Base Temporada 26/27 — Ciudad Alta Las Palmas"
+                         class="captacion-img w-full max-w-xl"
+                         loading="lazy">
+                </picture>
             </div>
 
+            <!-- Formulario -->
             <div class="iframe-container h-form shadow-2xl">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj2RGIiWNmTQOXIKryUilu0IExKaCZhkqPxKye50BrM2mErQ/viewform?embedded=true">Cargando...</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScj2RGIiWNmTQOXIKryUilu0IExKaCZhkqPxKye50BrM2mErQ/viewform?embedded=true"
+                        title="Formulario de inscripción C.D. Alcotán Canarias 26/27">Cargando formulario...</iframe>
             </div>
         </section>
 
+        <!-- ═══════════════ METODOLOGÍA ═══════════════ -->
         <section id="metodologia" class="tab-content space-y-16">
             <div class="glass-card p-10 md:p-16 rounded-[3rem] border-l-8 border-yellow-500 flex flex-col md:flex-row gap-12 items-center bg-gradient-to-br from-white/5 to-transparent">
                 <div class="md:w-1/3 relative group">
-                    <img src="img/presentacion-samy.png" alt="Samy Martín" class="w-full rounded-3xl shadow-2xl grayscale group-hover:grayscale-0 transition duration-700">
+                    <img src="img/presentacion-samy.png" alt="Samy Martín — Coordinador de Base C.D. Alcotán Canarias" class="w-full rounded-3xl shadow-2xl grayscale group-hover:grayscale-0 transition duration-700" loading="lazy">
                     <div class="absolute -bottom-4 -right-4 bg-yellow-500 text-black px-6 py-2 rounded-full font-black text-[10px] uppercase italic">Coordinador</div>
                 </div>
                 <div class="md:w-2/3 space-y-6">
@@ -219,10 +462,17 @@
                         <div class="text-center"><p class="text-2xl font-black text-yellow-500">E</p><p class="text-[8px] text-gray-500 uppercase">Esfuerzo</p></div>
                         <div class="text-center"><p class="text-2xl font-black text-yellow-500">C</p><p class="text-[8px] text-gray-500 uppercase">Constancia</p></div>
                     </div>
+                    <a href="https://wa.me/34625468296?text=Hola%20Samy%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20metodolog%C3%ADa%20MEC%20del%20C.D.%20Alcot%C3%A1n"
+                       target="_blank" rel="noopener noreferrer"
+                       class="cta-action inline-flex items-center gap-3 border border-yellow-500/40 text-yellow-500 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest mt-4"
+                       data-track="cta-whatsapp-metodologia">
+                        <i class="fab fa-whatsapp text-lg"></i> Hablar con Samy
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- ═══════════════ SEGURIDAD ═══════════════ -->
         <section id="seguridad" class="tab-content space-y-16 text-center">
             <h2 class="text-4xl font-black italic uppercase text-white tracking-tighter">ENTORNO <span class="text-yellow-500">BLINDADO</span></h2>
             <div class="grid md:grid-cols-2 gap-10 text-left">
@@ -237,41 +487,124 @@
                     <p class="text-[11px] text-gray-500 leading-relaxed uppercase font-bold italic">Comunicación unidireccional y profesional. Protegemos la intimidad y evitamos conflictos digitales.</p>
                 </div>
             </div>
+            <div class="pt-8">
+                <p class="text-[10px] text-gray-500 uppercase font-black italic tracking-widest mb-6">¿Tienes alguna duda sobre la seguridad del menor?</p>
+                <a href="https://wa.me/34625468296?text=Hola%20Samy%2C%20tengo%20una%20consulta%20sobre%20el%20protocolo%20de%20seguridad%20del%20C.D.%20Alcot%C3%A1n"
+                   target="_blank" rel="noopener noreferrer"
+                   class="cta-action inline-flex items-center gap-3 border-2 border-yellow-500 text-yellow-500 px-10 py-4 rounded-full text-[10px] font-black uppercase tracking-widest"
+                   data-track="cta-whatsapp-seguridad">
+                    <i class="fab fa-whatsapp text-lg"></i> Consultarnos por WhatsApp
+                </a>
+            </div>
         </section>
 
     </main>
 
-    <footer class="py-20 text-center border-t border-white/5 bg-black mt-20 opacity-40">
-        <img src="img/logo.png" alt="Alcotán" class="max-h-12 mx-auto mb-6 grayscale">
-        <p class="text-[9px] tracking-[0.6em] text-gray-600 font-black uppercase italic">C.D. Alcotán Canarias • Cuevas Torres • 2026</p>
+    <!-- ═══ Footer ═══ -->
+    <footer class="py-20 text-center border-t border-white/5 bg-black mt-20">
+        <img src="img/logo.png" alt="Alcotán" class="max-h-12 mx-auto mb-6 grayscale cursor-pointer" ondblclick="openAnalytics()" title="Panel de interacciones">
+        <p class="text-[9px] tracking-[0.6em] text-gray-500 font-black uppercase italic">C.D. Alcotán Canarias • Cancha Cuevas Torres • Ciudad Alta • 2026</p>
+        <p class="text-[9px] text-gray-600 mt-2 uppercase tracking-widest">
+            <i class="fab fa-whatsapp mr-1"></i>
+            <a href="https://wa.me/34625468296" class="hover:text-yellow-500 transition" data-track="footer-whatsapp">+34 625 468 296 · Samy Martín</a>
+        </p>
     </footer>
 
     <script>
+        /* ═══ Tabs ═══ */
         function showTab(event, tabId) {
-            // Ocultar contenidos
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(c => c.classList.remove('active'));
-            
-            // Gestionar botones nav
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(b => b.classList.remove('nav-active'));
-            
-            // Activar contenido
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active'));
             const activeTab = document.getElementById(tabId);
-            if(activeTab) {
-                activeTab.classList.add('active');
-            }
-            
-            // Activar botón correspondiente
+            if (activeTab) activeTab.classList.add('active');
             if (event && event.currentTarget && event.currentTarget.classList.contains('nav-btn')) {
                 event.currentTarget.classList.add('nav-active');
             } else {
-                const targetBtn = document.querySelector(`button[onclick*="'${tabId}'"]`);
-                if(targetBtn) targetBtn.classList.add('nav-active');
+                const btn = document.querySelector(`button[onclick*="'${tabId}'"]`);
+                if (btn) btn.classList.add('nav-active');
             }
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        /* ═══ FAQ Accordion ═══ */
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon   = btn.querySelector('.faq-icon');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('open'));
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.add('open');
+            }
+        }
+
+        /* ═══ Analítica localStorage ═══ */
+        const TRACK_KEY = 'alcotan_clicks';
+
+        function getClicks() {
+            try { return JSON.parse(localStorage.getItem(TRACK_KEY)) || {}; } catch { return {}; }
+        }
+        function saveClicks(data) {
+            try { localStorage.setItem(TRACK_KEY, JSON.stringify(data)); } catch {}
+        }
+        function trackClick(label) {
+            const data = getClicks();
+            data[label] = (data[label] || 0) + 1;
+            saveClicks(data);
+        }
+        function openAnalytics() {
+            const data = getClicks();
+            const panel = document.getElementById('analytics-panel');
+            const overlay = document.getElementById('analytics-overlay');
+            const container = document.getElementById('analytics-data');
+            const labels = {
+                'whatsapp-fab':           'WhatsApp (botón flotante)',
+                'cta-reservar-inicio':    'Reservar Plaza (Inicio)',
+                'cta-dossier-inicio':     'Ver el Proyecto (Inicio)',
+                'cta-reservar-captacion': 'Reservar Plaza (Captación)',
+                'cta-inscripcion-dossier':'Reservar Plaza (Dossier)',
+                'cta-whatsapp-metodologia':'WhatsApp (Metodología)',
+                'cta-whatsapp-seguridad': 'WhatsApp (Seguridad)',
+                'footer-whatsapp':        'Teléfono (Footer)',
+                'tab-inicio':             'Tab: Inicio',
+                'tab-dossier':            'Tab: Dossier',
+                'tab-inscripcion':        'Tab: Inscripción',
+                'tab-metodologia':        'Tab: Metodología',
+                'tab-seguridad':          'Tab: Seguridad',
+            };
+            const entries = Object.keys(labels).map(k => ({ key: k, label: labels[k], count: data[k] || 0 }))
+                                               .sort((a, b) => b.count - a.count);
+            container.innerHTML = entries.map(e =>
+                `<div class="flex justify-between items-center py-2 border-b border-white/5">
+                    <span class="text-[10px] text-gray-300 uppercase font-bold">${e.label}</span>
+                    <span class="text-yellow-500 font-black text-sm">${e.count}</span>
+                </div>`
+            ).join('');
+            overlay.classList.add('visible');
+            panel.classList.add('visible');
+        }
+        function closeAnalytics() {
+            document.getElementById('analytics-panel').classList.remove('visible');
+            document.getElementById('analytics-overlay').classList.remove('visible');
+        }
+        function resetAnalytics() {
+            saveClicks({});
+            closeAnalytics();
+        }
+
+        /* Registrar clics en todos los elementos con data-track */
+        document.addEventListener('click', e => {
+            const el = e.target.closest('[data-track]');
+            if (el) trackClick(el.dataset.track);
+        });
+
+        /* Registrar visita */
+        (function() {
+            const data = getClicks();
+            data['_visitas'] = (data['_visitas'] || 0) + 1;
+            saveClicks(data);
+        })();
     </script>
 </body>
 </html>
