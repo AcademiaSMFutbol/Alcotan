@@ -234,6 +234,13 @@
                         Ver el Proyecto <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                 </div>
+                <!-- WhatsApp directo -->
+                <a href="https://wa.me/34625468296?text=Hola%20Samy%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20C.D.%20Alcot%C3%A1n%20Canarias%20y%20las%20inscripciones%20para%20la%20temporada%2026%2F27."
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-green-500/20 hover:scale-105 transition-transform"
+                   data-track="cta-whatsapp-inicio">
+                    <i class="fab fa-whatsapp text-xl"></i> Pedir información · Te respondemos hoy
+                </a>
             </div>
 
             <!-- Horarios y localización -->
@@ -733,72 +740,82 @@
             if (el) trackClick(el.dataset.track);
         });
 
-        /* ═══ Plazas en tiempo real — Google Sheets ═══
-         * Pega aquí la URL del Apps Script una vez desplegado.
-         * Instrucciones en apps-script/plazas.gs del repositorio.
+        /* ═══ Plazas en tiempo real — Google Sheets vía JSONP ═══
+         * JSONP evita el bloqueo CORS del navegador al llamar a Google Script.
+         * Si regeneras el despliegue en Apps Script, actualiza la URL aquí.
          */
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwfmLD95LGQ8haghxhrjI4bduWeKQirKfiQnVdTQ0Nt9iswpcak06mGr2PY8Vmprj60/exec';
         const TOTAL_PLAZAS = 15;
 
-        async function actualizarPlazas() {
-            if (APPS_SCRIPT_URL === 'PENDIENTE_CONFIGURAR') {
-                document.querySelectorAll('.plazas-label').forEach(el => {
-                    el.textContent = 'Inscripciones abiertas · Plazas disponibles';
-                });
-                document.querySelectorAll('.plazas-numero').forEach(el => {
-                    el.textContent = '15';
-                });
-                return;
-            }
-            try {
-                const res  = await fetch(APPS_SCRIPT_URL);
-                const data = await res.json();
-                if (!data.ok) return;
+        function pedirPlazasJSONP() {
+            return new Promise(function(resolve, reject) {
+                var cbName = '_alcotanPlazas' + Date.now();
+                var script = document.createElement('script');
+                script.src = APPS_SCRIPT_URL + '?callback=' + cbName;
+                script.onerror = function() {
+                    delete window[cbName];
+                    script.remove();
+                    reject(new Error('JSONP error'));
+                };
+                window[cbName] = function(data) {
+                    delete window[cbName];
+                    script.remove();
+                    resolve(data);
+                };
+                document.head.appendChild(script);
+            });
+        }
 
-                Object.entries(data.counts).forEach(([cat, count]) => {
-                    const card = document.querySelector(`[data-category="${cat}"]`);
-                    if (!card) return;
+        function pintarPlazas(data) {
+            if (!data || !data.ok) return;
+            Object.keys(data.counts).forEach(function(cat) {
+                var count = data.counts[cat];
+                var card  = document.querySelector('[data-category="' + cat + '"]');
+                if (!card) return;
 
-                    const libre  = TOTAL_PLAZAS - count;
-                    const pct    = Math.min(Math.round((count / TOTAL_PLAZAS) * 100), 100);
-                    const bar    = card.querySelector('.plazas-bar-fill');
-                    const numero = card.querySelector('.plazas-numero');
-                    const label  = card.querySelector('.plazas-label');
+                var libre  = TOTAL_PLAZAS - count;
+                var pct    = Math.min(Math.round((count / TOTAL_PLAZAS) * 100), 100);
+                var bar    = card.querySelector('.plazas-bar-fill');
+                var numero = card.querySelector('.plazas-numero');
+                var label  = card.querySelector('.plazas-label');
 
-                    if (bar) {
-                        setTimeout(() => { bar.style.width = pct + '%'; }, 200);
-                        bar.classList.toggle('completo', libre <= 0);
-                        bar.classList.toggle('urgente',  libre > 0 && libre <= 4);
+                if (bar) {
+                    setTimeout(function() { bar.style.width = pct + '%'; }, 200);
+                    bar.classList.toggle('completo', libre <= 0);
+                    bar.classList.toggle('urgente',  libre > 0 && libre <= 4);
+                }
+                if (numero) {
+                    numero.textContent = count + '/' + TOTAL_PLAZAS;
+                    numero.className   = 'plazas-numero font-black text-lg ' +
+                        (libre <= 0 ? 'text-red-400' : libre <= 4 ? 'text-orange-400' : 'text-yellow-500');
+                }
+                if (label) {
+                    if (libre <= 0) {
+                        label.textContent = '¡COMPLETO! — Lista de espera';
+                        label.className   = 'plazas-label text-[9px] text-red-400 uppercase font-black';
+                        card.classList.add('completo-card');
+                    } else if (libre <= 4) {
+                        label.textContent = '⚠ Solo ' + libre + ' plaza' + (libre > 1 ? 's' : '') + ' libre' + (libre > 1 ? 's' : '');
+                        label.className   = 'plazas-label text-[9px] text-orange-400 uppercase font-black';
+                    } else {
+                        label.textContent = libre + ' plazas disponibles · Inscríbete ya';
+                        label.className   = 'plazas-label text-[9px] text-gray-500 uppercase font-bold';
                     }
-                    if (numero) {
-                        numero.textContent = `${count}/${TOTAL_PLAZAS}`;
-                        numero.className = `plazas-numero font-black text-lg ${libre <= 0 ? 'text-red-400' : libre <= 4 ? 'text-orange-400' : 'text-yellow-500'}`;
-                    }
-                    if (label) {
-                        if (libre <= 0) {
-                            label.textContent = '¡COMPLETO! — Lista de espera';
-                            label.className = 'plazas-label text-[9px] text-red-400 uppercase font-black';
-                            card.classList.add('completo-card');
-                        } else if (libre <= 4) {
-                            label.textContent = `⚠ Solo ${libre} plaza${libre > 1 ? 's' : ''} libre${libre > 1 ? 's' : ''}`;
-                            label.className = 'plazas-label text-[9px] text-orange-400 uppercase font-black';
-                        } else {
-                            label.textContent = `${libre} plazas disponibles · Inscríbete ya`;
-                            label.className = 'plazas-label text-[9px] text-gray-500 uppercase font-bold';
-                        }
-                    }
-                });
+                }
+            });
 
-                const updEl = document.getElementById('plazas-updated');
-                if (updEl && data.updated) updEl.textContent = `↻ ${data.updated}`;
+            var updEl = document.getElementById('plazas-updated');
+            if (updEl && data.updated) updEl.textContent = '↻ ' + data.updated;
+        }
 
-            } catch(e) {
-                console.log('Plazas: sin conexión con el servidor');
-            }
+        function actualizarPlazas() {
+            pedirPlazasJSONP()
+                .then(pintarPlazas)
+                .catch(function() { console.log('Plazas: sin conexión con la hoja'); });
         }
 
         actualizarPlazas();
-        setInterval(actualizarPlazas, 5 * 60 * 1000); // refresco cada 5 min
+        setInterval(actualizarPlazas, 5 * 60 * 1000);
 
         /* Registrar visita */
         (function() {
