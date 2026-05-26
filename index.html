@@ -97,6 +97,12 @@
         .horario-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.3s; }
         .horario-card:hover { border-color: rgba(251,191,36,0.4); }
 
+        /* Plazas */
+        .plazas-bar-bg { background: rgba(255,255,255,0.06); border-radius: 99px; height: 6px; }
+        .plazas-bar-fill { background: linear-gradient(90deg, #fbbf24, #f59e0b); border-radius: 99px; height: 6px; transition: width 1s ease; }
+        .plazas-card { border: 1px solid rgba(251,191,36,0.2); background: rgba(251,191,36,0.03); transition: border-color 0.3s; }
+        .plazas-card:hover { border-color: rgba(251,191,36,0.5); }
+
         /* FAQ */
         .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
@@ -178,7 +184,7 @@
         <!-- Urgencia -->
         <div class="mt-6 urgencia-badge inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/50 text-yellow-400 text-[9px] font-black uppercase tracking-widest px-5 py-2 rounded-full">
             <span class="w-2 h-2 bg-yellow-400 rounded-full inline-block"></span>
-            Inscripciones abiertas · Plazas limitadas · Temporada 26/27
+            Solo 15 plazas por categoría · Por orden de inscripción · Temporada 26/27
         </div>
     </header>
 
@@ -259,6 +265,77 @@
                 <p class="text-[9px] text-gray-600 uppercase font-bold text-center">* Categoría Infantil: campo e horario pendiente de confirmar. Contacta por WhatsApp para info actualizada.</p>
             </div>
 
+            <!-- Plazas por categoría -->
+            <div class="space-y-4">
+                <div class="text-center space-y-2">
+                    <h3 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter">
+                        <span class="text-yellow-500">15 PLAZAS</span> POR CATEGORÍA
+                    </h3>
+                    <p class="text-gray-500 text-[10px] uppercase font-black tracking-widest">Un equipo por categoría · Se respeta el orden de inscripción</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-white font-black text-sm uppercase">Mini-prebenjamín</p>
+                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2022 · 2021 · A partir de 4 años</p>
+                            </div>
+                            <p class="text-yellow-500 font-black text-lg">15</p>
+                        </div>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
+                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                    </div>
+                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-white font-black text-sm uppercase">Prebenjamín</p>
+                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2020 · 2019</p>
+                            </div>
+                            <p class="text-yellow-500 font-black text-lg">15</p>
+                        </div>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
+                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                    </div>
+                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-white font-black text-sm uppercase">Benjamín</p>
+                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2018 · 2017</p>
+                            </div>
+                            <p class="text-yellow-500 font-black text-lg">15</p>
+                        </div>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
+                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                    </div>
+                    <div class="plazas-card rounded-2xl p-6 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-white font-black text-sm uppercase">Alevín</p>
+                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2016 · 2015</p>
+                            </div>
+                            <p class="text-yellow-500 font-black text-lg">15</p>
+                        </div>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
+                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                    </div>
+                    <div class="plazas-card rounded-2xl p-6 space-y-3 md:col-span-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-white font-black text-sm uppercase">Infantil</p>
+                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2014 · 2013</p>
+                            </div>
+                            <p class="text-yellow-500 font-black text-lg">15</p>
+                        </div>
+                        <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%" data-target="0%"></div></div>
+                        <p class="text-[9px] text-gray-600 uppercase font-bold">Plazas disponibles · Inscríbete ya</p>
+                    </div>
+                </div>
+                <p class="text-center text-[9px] text-gray-600 uppercase font-bold pt-2">
+                    <i class="fas fa-info-circle mr-1 text-yellow-500/60"></i>
+                    Las plazas se asignan por estricto orden de formulario recibido. Una vez completo el equipo, lista de espera.
+                </p>
+            </div>
+
             <!-- Bloque Puertas Abiertas / Captación -->
             <div class="captacion-card rounded-[2.5rem] p-6 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div class="w-full md:w-1/2">
@@ -276,7 +353,7 @@
                         ¡SÚMATE A <br><span class="text-yellow-500">NUESTRO EQUIPO!</span>
                     </h3>
                     <p class="text-gray-400 text-[11px] md:text-xs leading-relaxed uppercase italic">
-                        Fútbol Base desde los 4 años. Formación integral bajo la Metodología MEC: Motivación, Esfuerzo y Constancia. Más que fútbol, formamos personas.
+                        Fútbol Base desde los 4 años. Un equipo por categoría, máximo 15 miembros. Las plazas se cubren por orden de inscripción. Formación integral bajo la Metodología MEC.
                     </p>
                     <div class="flex flex-wrap gap-3 justify-center md:justify-start text-[9px] font-black uppercase">
                         <span class="bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 px-4 py-2 rounded-full">Mini-prebenjamín</span>
@@ -322,7 +399,7 @@
         <section id="inscripcion" class="tab-content space-y-12">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-black uppercase italic text-white">RESERVA DE <span class="text-yellow-500">PLAZA</span></h2>
-                <p class="text-gray-500 text-[10px] uppercase tracking-widest">Plazas limitadas · Temporada 26/27</p>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest">15 plazas por categoría · Un equipo · Por orden de inscripción</p>
             </div>
 
             <!-- FAQ -->
@@ -330,6 +407,15 @@
                 <h3 class="text-lg font-black text-white uppercase mb-8 italic flex items-center gap-3">
                     <i class="fas fa-question-circle text-yellow-500"></i> Preguntas Frecuentes
                 </h3>
+                <div class="faq-item pb-4">
+                    <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
+                        <span class="text-[11px] font-black text-white uppercase">¿Cuántas plazas hay por categoría?</span>
+                        <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
+                        <p class="pb-3">Cada categoría tiene un único equipo con un máximo de 15 miembros. Las plazas se asignan por estricto orden de formulario recibido. Una vez cubierto el equipo, se abre lista de espera. No esperes.</p>
+                    </div>
+                </div>
                 <div class="faq-item pb-4">
                     <button class="faq-btn w-full text-left flex items-center justify-between py-3 gap-4" onclick="toggleFaq(this)">
                         <span class="text-[11px] font-black text-white uppercase">¿Dónde son los entrenamientos?</span>
@@ -597,6 +683,14 @@
         document.addEventListener('click', e => {
             const el = e.target.closest('[data-track]');
             if (el) trackClick(el.dataset.track);
+        });
+
+        /* Animar barras de plazas al cargar */
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.plazas-bar-fill').forEach(bar => {
+                const target = bar.dataset.target || '0%';
+                setTimeout(() => { bar.style.width = target; }, 300);
+            });
         });
 
         /* Registrar visita */
