@@ -247,14 +247,20 @@
 
             <!-- Horarios y localización -->
             <div class="glass-card rounded-[2.5rem] p-8 md:p-12 space-y-8">
-                <div class="flex items-center gap-4 mb-2">
-                    <i class="fas fa-map-marker-alt text-yellow-500 text-xl"></i>
-                    <div>
-                        <p class="text-[9px] font-black tracking-[0.4em] text-yellow-500 uppercase">Dónde entrenamos</p>
-                        <p class="text-white font-black uppercase text-sm md:text-base">Cancha Cuevas Torres · Urb. Cinco Continentes s/n · Ciudad Alta</p>
+                <div class="flex items-center justify-between flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-map-marker-alt text-yellow-500 text-xl"></i>
+                        <div>
+                            <p class="text-[9px] font-black tracking-[0.4em] text-yellow-500 uppercase">Dónde entrenamos</p>
+                            <p class="text-white font-black uppercase text-sm md:text-base">Cancha Cuevas Torres · Urb. Cinco Continentes s/n · Ciudad Alta</p>
+                        </div>
                     </div>
+                    <span class="text-[9px] font-black uppercase tracking-widest text-yellow-500/60 border border-yellow-500/20 px-3 py-1 rounded-full">
+                        <i class="fas fa-clock mr-1"></i> Horarios solicitados · Pendientes de aprobación municipal
+                    </span>
                 </div>
-                <div class="grid md:grid-cols-2 gap-6">
+
+                <div class="grid md:grid-cols-3 gap-4">
                     <div class="horario-card rounded-2xl p-6 space-y-3">
                         <p class="text-[9px] font-black tracking-widest text-yellow-500 uppercase">Alevín · Benjamín</p>
                         <p class="text-white font-black text-lg uppercase">Lun · Mié · Vie</p>
@@ -273,8 +279,29 @@
                             <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Prebenjamín · Nac. 2020–2019</span>
                         </div>
                     </div>
+                    <div class="horario-card rounded-2xl p-6 space-y-3 border-yellow-500/30">
+                        <p class="text-[9px] font-black tracking-widest text-yellow-500 uppercase">Infantil</p>
+                        <p class="text-white font-black text-lg uppercase">Lun · Mar · Jue</p>
+                        <p class="text-gray-400 font-bold text-sm uppercase">18:30 – 20:00 h</p>
+                        <div class="flex gap-2 flex-wrap mt-2">
+                            <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Infantil · Nac. 2014–2013</span>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-[9px] text-gray-600 uppercase font-bold text-center">* Categoría Infantil: campo e horario pendiente de confirmar. Contacta por WhatsApp para info actualizada.</p>
+
+                <!-- Mapa visual de campo -->
+                <div class="space-y-3">
+                    <p class="text-[9px] font-black tracking-widest text-gray-500 uppercase">Distribución propuesta del campo</p>
+                    <img src="img/horarios-campo.jpg"
+                         alt="Distribución horaria del campo Cuevas Torres — C.D. Alcotán Canarias temporada 26/27"
+                         class="w-full rounded-2xl opacity-90 hover:opacity-100 transition-opacity"
+                         loading="lazy">
+                </div>
+
+                <p class="text-[9px] text-gray-600 uppercase font-bold text-center">
+                    <i class="fas fa-info-circle mr-1 text-yellow-500/60"></i>
+                    Horarios solicitados al Ayuntamiento. Sujetos a confirmación oficial. Te avisaremos por WhatsApp en cuanto estén aprobados.
+                </p>
             </div>
 
             <!-- Plazas por categoría (datos en tiempo real desde Google Sheets) -->
@@ -488,8 +515,9 @@
                         <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
                     </button>
                     <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
-                        <p class="pb-1">• Alevín y Benjamín: Lunes, Miércoles y Viernes de 17:00 a 18:30 h.</p>
-                        <p class="pb-3">• Mini-prebenjamín y Prebenjamín: Martes y Jueves de 17:00 a 18:30 h.</p>
+                        <p class="pb-1">• Alevín y Benjamín: Lunes, Miércoles y Viernes · 17:00 – 18:30 h.</p>
+                        <p class="pb-1">• Mini-prebenjamín y Prebenjamín: Martes y Jueves · 17:00 – 18:30 h.</p>
+                        <p class="pb-3">• Infantil: Lunes, Martes y Jueves · 18:30 – 20:00 h. (Horarios solicitados al Ayuntamiento, pendientes de aprobación definitiva. Se comunicará cualquier cambio por WhatsApp.)</p>
                     </div>
                 </div>
                 <div class="faq-item pb-4">
