@@ -71,7 +71,9 @@ function buildResult() {
     else if (v.indexOf('inf')  !== -1)  counts.infantil++;
   }
 
-  return { ok: true, total: 15, counts: counts, updated: ahora() };
+  // Infantil juega F11: máximo reglamentario por convocatoria RFEF = 18
+  var totales = { mini: 15, prebenjamin: 15, benjamin: 15, alevin: 15, infantil: 18 };
+  return { ok: true, totales: totales, counts: counts, updated: ahora() };
 }
 
 function norm(s) {

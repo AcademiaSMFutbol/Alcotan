@@ -279,12 +279,12 @@
             <div class="space-y-4">
                 <div class="text-center space-y-2">
                     <h3 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter">
-                        <span class="text-yellow-500">15 PLAZAS</span> POR CATEGORÍA
+                        <span class="text-yellow-500">PLAZAS</span> POR CATEGORÍA
                     </h3>
                     <p class="text-gray-500 text-[10px] uppercase font-black tracking-widest">Un equipo por categoría · Se respeta el orden de inscripción</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-4">
-                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="mini">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="mini" data-total="15">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Mini-prebenjamín</p>
@@ -295,7 +295,7 @@
                         <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
                         <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="prebenjamin">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="prebenjamin" data-total="15">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Prebenjamín</p>
@@ -306,7 +306,7 @@
                         <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
                         <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="benjamin">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="benjamin" data-total="15">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Benjamín</p>
@@ -317,7 +317,7 @@
                         <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
                         <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="alevin">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3" data-category="alevin" data-total="15">
                         <div class="flex justify-between items-center">
                             <div>
                                 <p class="text-white font-black text-sm uppercase">Alevín</p>
@@ -328,13 +328,13 @@
                         <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
                         <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
                     </div>
-                    <div class="plazas-card rounded-2xl p-6 space-y-3 md:col-span-2" data-category="infantil">
+                    <div class="plazas-card rounded-2xl p-6 space-y-3 md:col-span-2" data-category="infantil" data-total="18">
                         <div class="flex justify-between items-center">
                             <div>
-                                <p class="text-white font-black text-sm uppercase">Infantil</p>
-                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2014 · 2013</p>
+                                <p class="text-white font-black text-sm uppercase">Infantil <span class="text-[9px] text-yellow-500/70 font-bold normal-case ml-2">Fútbol 11 · Cambios ilimitados</span></p>
+                                <p class="text-[9px] text-gray-500 uppercase font-bold">Nacidos 2014 · 2013 · Máx. reglamentario por convocatoria RFEF</p>
                             </div>
-                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/15</p>
+                            <p class="plazas-numero text-yellow-500 font-black text-lg">–/18</p>
                         </div>
                         <div class="plazas-bar-bg"><div class="plazas-bar-fill" style="width:0%"></div></div>
                         <p class="plazas-label text-[9px] text-gray-600 uppercase font-bold">Actualizando…</p>
@@ -466,7 +466,8 @@
                         <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
                     </button>
                     <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
-                        <p class="pb-3">Cada categoría tiene un único equipo con un máximo de 15 miembros. Las plazas se asignan por estricto orden de formulario recibido. Una vez cubierto el equipo, se abre lista de espera. No esperes.</p>
+                        <p class="pb-1">Las categorías de Fútbol 7/8 (Mini, Prebenjamín, Benjamín y Alevín) tienen un máximo de 15 miembros por equipo.</p>
+                        <p class="pb-3">La categoría Infantil juega Fútbol 11 con cambios ilimitados, por lo que el límite es de 18 jugadores — el máximo reglamentario por convocatoria según la RFEF. Las plazas se asignan por estricto orden de formulario. Una vez cubierto el equipo, lista de espera.</p>
                     </div>
                 </div>
                 <div class="faq-item pb-4">
@@ -745,8 +746,7 @@
          * Si regeneras el despliegue en Apps Script, actualiza la URL aquí.
          */
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzKOyuJS6q_wBNNZsVoWwlzA86DfoiA0XsjFz6YPG2C_Gh9DHx_kROxj41veSQ5O0pn/exec';
-        const TOTAL_PLAZAS = 15;
-
+        // Cada tarjeta lleva su propio data-total (15 para F7/F8, 18 para Infantil F11)
         function pedirPlazasJSONP() {
             return new Promise(function(resolve, reject) {
                 var cbName = '_alcotanPlazas' + Date.now();
@@ -773,8 +773,9 @@
                 var card  = document.querySelector('[data-category="' + cat + '"]');
                 if (!card) return;
 
-                var libre  = TOTAL_PLAZAS - count;
-                var pct    = Math.min(Math.round((count / TOTAL_PLAZAS) * 100), 100);
+                var total  = parseInt(card.dataset.total, 10) || 15;
+                var libre  = total - count;
+                var pct    = Math.min(Math.round((count / total) * 100), 100);
                 var bar    = card.querySelector('.plazas-bar-fill');
                 var numero = card.querySelector('.plazas-numero');
                 var label  = card.querySelector('.plazas-label');
@@ -785,7 +786,7 @@
                     bar.classList.toggle('urgente',  libre > 0 && libre <= 4);
                 }
                 if (numero) {
-                    numero.textContent = count + '/' + TOTAL_PLAZAS;
+                    numero.textContent = count + '/' + total;
                     numero.className   = 'plazas-numero font-black text-lg ' +
                         (libre <= 0 ? 'text-red-400' : libre <= 4 ? 'text-orange-400' : 'text-yellow-500');
                 }
