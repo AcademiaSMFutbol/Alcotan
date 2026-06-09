@@ -41,7 +41,7 @@
       "sport": "Fútbol",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Campo Antonio Rojas, Las Rehoyas",
+        "streetAddress": "Cancha Cuevas Torres, Urb. Cinco Continentes s/n",
         "addressLocality": "Las Palmas de Gran Canaria",
         "addressRegion": "Canarias",
         "addressCountry": "ES"
@@ -247,17 +247,25 @@
 
             <!-- Horarios y localización -->
             <div class="glass-card rounded-[2.5rem] p-8 md:p-12 space-y-8">
-                <div class="flex items-center justify-between flex-wrap gap-4">
-                    <div class="flex items-center gap-4">
-                        <i class="fas fa-map-marker-alt text-yellow-500 text-xl"></i>
-                        <div>
-                            <p class="text-[9px] font-black tracking-[0.4em] text-yellow-500 uppercase">Dónde entrenamos</p>
-                            <p class="text-white font-black uppercase text-sm md:text-base">Campo Antonio Rojas · Las Rehoyas · Ciudad Alta</p>
-                        </div>
+
+                <!-- Campo principal confirmado -->
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-map-marker-alt text-yellow-500 text-xl flex-shrink-0"></i>
+                    <div>
+                        <p class="text-[9px] font-black tracking-[0.4em] text-yellow-500 uppercase">Campo principal del club</p>
+                        <p class="text-white font-black uppercase text-sm md:text-base">Cancha Cuevas Torres · Urb. Cinco Continentes s/n · Ciudad Alta</p>
+                        <p class="text-[9px] text-gray-500 uppercase font-bold mt-1">Sede de las Jornadas de Puertas Abiertas</p>
                     </div>
-                    <span class="text-[9px] font-black uppercase tracking-widest text-yellow-500/60 border border-yellow-500/20 px-3 py-1 rounded-full">
-                        <i class="fas fa-clock mr-1"></i> Horarios solicitados · Pendientes de aprobación municipal
-                    </span>
+                </div>
+
+                <!-- Campo solicitado para temporada -->
+                <div class="flex items-start gap-4 bg-yellow-500/5 border border-yellow-500/20 rounded-2xl p-5">
+                    <i class="fas fa-clock text-yellow-500/60 text-lg flex-shrink-0 mt-0.5"></i>
+                    <div>
+                        <p class="text-[9px] font-black tracking-[0.3em] text-yellow-500/70 uppercase">Campo solicitado para la temporada · Pendiente de aprobación municipal</p>
+                        <p class="text-white font-black uppercase text-sm mt-1">Campo Antonio Rojas · Las Rehoyas</p>
+                        <p class="text-[9px] text-gray-500 uppercase font-bold mt-1">Si el Ayuntamiento no lo concede, los entrenamientos se adaptarán a Cuevas Torres</p>
+                    </div>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-4">
@@ -279,7 +287,7 @@
                             <span class="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-black uppercase px-3 py-1 rounded-full">Prebenjamín · Nac. 2020–2019</span>
                         </div>
                     </div>
-                    <div class="horario-card rounded-2xl p-6 space-y-3 border-yellow-500/30">
+                    <div class="horario-card rounded-2xl p-6 space-y-3">
                         <p class="text-[9px] font-black tracking-widest text-yellow-500 uppercase">Infantil</p>
                         <p class="text-white font-black text-lg uppercase">Lun · Mar · Jue</p>
                         <p class="text-gray-400 font-bold text-sm uppercase">18:30 – 20:00 h</p>
@@ -291,16 +299,16 @@
 
                 <!-- Mapa visual de campo -->
                 <div class="space-y-3">
-                    <p class="text-[9px] font-black tracking-widest text-gray-500 uppercase">Distribución propuesta del campo</p>
+                    <p class="text-[9px] font-black tracking-widest text-gray-500 uppercase">Distribución propuesta · Campo Antonio Rojas</p>
                     <img src="img/horarios-campo.jpg"
-                         alt="Distribución horaria del Campo Antonio Rojas (Las Rehoyas) — C.D. Alcotán Canarias temporada 26/27"
+                         alt="Distribución horaria propuesta Campo Antonio Rojas (Las Rehoyas) — C.D. Alcotán Canarias temporada 26/27"
                          class="w-full rounded-2xl opacity-90 hover:opacity-100 transition-opacity"
                          loading="lazy">
                 </div>
 
                 <p class="text-[9px] text-gray-600 uppercase font-bold text-center">
                     <i class="fas fa-info-circle mr-1 text-yellow-500/60"></i>
-                    Horarios solicitados al Ayuntamiento. Sujetos a confirmación oficial. Te avisaremos por WhatsApp en cuanto estén aprobados.
+                    Horarios solicitados al Ayuntamiento. Sujetos a confirmación oficial. Te avisaremos por WhatsApp en cuanto estén resueltos.
                 </p>
             </div>
 
@@ -506,7 +514,8 @@
                         <i class="fas fa-plus text-yellow-500 faq-icon flex-shrink-0"></i>
                     </button>
                     <div class="faq-answer text-[11px] text-gray-400 leading-relaxed uppercase font-bold px-1">
-                        <p class="pb-3">Campo Antonio Rojas, Las Rehoyas, Ciudad Alta, Las Palmas de Gran Canaria.</p>
+                        <p class="pb-1">Campo principal: Cancha Cuevas Torres, Urb. Cinco Continentes s/n, Ciudad Alta (sede de Puertas Abiertas y campo habitual del club).</p>
+                        <p class="pb-3">Campo solicitado para la temporada: Campo Antonio Rojas, Las Rehoyas — pendiente de aprobación municipal. Si no se concede, los entrenamientos se adaptarán a Cuevas Torres.</p>
                     </div>
                 </div>
                 <div class="faq-item pb-4">
@@ -676,7 +685,7 @@
     <!-- ═══ Footer ═══ -->
     <footer class="py-20 text-center border-t border-white/5 bg-black mt-20">
         <img src="img/logo.png" alt="Alcotán" class="max-h-12 mx-auto mb-6 grayscale cursor-pointer" ondblclick="openAnalytics()" title="Panel de interacciones">
-        <p class="text-[9px] tracking-[0.6em] text-gray-500 font-black uppercase italic">C.D. Alcotán Canarias • Campo Antonio Rojas • Ciudad Alta • 2026</p>
+        <p class="text-[9px] tracking-[0.6em] text-gray-500 font-black uppercase italic">C.D. Alcotán Canarias • Cuevas Torres • Ciudad Alta • 2026</p>
         <p class="text-[9px] text-gray-600 mt-2 uppercase tracking-widest">
             <i class="fab fa-whatsapp mr-1"></i>
             <a href="https://wa.me/34625468296" class="hover:text-yellow-500 transition" data-track="footer-whatsapp">+34 625 468 296 · Samy Martín</a>
