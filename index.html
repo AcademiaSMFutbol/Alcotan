@@ -801,13 +801,45 @@
     </main>
 
     <!-- ═══ Footer ═══ -->
-    <footer class="py-20 text-center border-t border-white/5 bg-black mt-20">
-        <img src="img/logo.png" alt="Alcotán" class="max-h-12 mx-auto mb-6 grayscale cursor-pointer" ondblclick="openAnalytics()" title="Panel de interacciones">
+    <footer class="py-20 text-center border-t border-white/5 bg-black mt-20 space-y-6">
+        <img src="img/logo.png" alt="Alcotán" class="max-h-12 mx-auto grayscale cursor-pointer" ondblclick="openAnalytics()" title="Panel de interacciones">
+
         <p class="text-[9px] tracking-[0.6em] text-gray-500 font-black uppercase italic">C.D. Alcotán Canarias • Cuevas Torres • Ciudad Alta • 2026</p>
-        <p class="text-[9px] text-gray-600 mt-2 uppercase tracking-widest">
-            <i class="fab fa-whatsapp mr-1"></i>
-            <a href="https://wa.me/34625468296" class="hover:text-yellow-500 transition" data-track="footer-whatsapp">+34 625 468 296 · Samy Martín</a>
+
+        <!-- Redes sociales + web oficial -->
+        <div class="flex items-center justify-center gap-6">
+            <a href="https://www.instagram.com/cdalcotancanarias?igsh=ZjNiaHhvMWI1czFz"
+               target="_blank" rel="noopener noreferrer"
+               class="text-gray-500 hover:text-yellow-500 transition text-xl"
+               aria-label="Instagram C.D. Alcotán Canarias"
+               data-track="footer-instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/18TdvPSjdx/"
+               target="_blank" rel="noopener noreferrer"
+               class="text-gray-500 hover:text-yellow-500 transition text-xl"
+               aria-label="Facebook C.D. Alcotán Canarias"
+               data-track="footer-facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/34625468296"
+               target="_blank" rel="noopener noreferrer"
+               class="text-gray-500 hover:text-yellow-500 transition text-xl"
+               aria-label="WhatsApp Samy Martín"
+               data-track="footer-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <!-- Web oficial del club -->
+        <p class="text-[9px] text-gray-600 uppercase tracking-widest">
+            Web oficial del club:
+            <a href="https://alcotancanarias.com" target="_blank" rel="noopener noreferrer"
+               class="text-yellow-500/70 hover:text-yellow-400 transition font-black"
+               data-track="footer-web-club">alcotancanarias.com</a>
         </p>
+
+        <p class="text-[9px] text-gray-700 uppercase tracking-widest">+34 625 468 296 · Samy Martín · Coordinador de Base</p>
     </footer>
 
     <script>
@@ -866,7 +898,10 @@
                 'cta-inscripcion-dossier':'Reservar Plaza (Dossier)',
                 'cta-whatsapp-metodologia':'WhatsApp (Metodología)',
                 'cta-whatsapp-seguridad': 'WhatsApp (Seguridad)',
-                'footer-whatsapp':        'Teléfono (Footer)',
+                'footer-whatsapp':        'WhatsApp (Footer)',
+                'footer-instagram':       'Instagram (Footer)',
+                'footer-facebook':        'Facebook (Footer)',
+                'footer-web-club':        'Web oficial alcotancanarias.com',
                 'tab-inicio':             'Tab: Inicio',
                 'tab-dossier':            'Tab: Dossier',
                 'tab-inscripcion':        'Tab: Inscripción',
